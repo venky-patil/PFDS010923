@@ -1,0 +1,8 @@
+Comment --> Comments are the lines of Statement that we are writing for understanding/Description
+            Purpose.Comments will never be executed.
+        --> In python if we make any line as comment then we need to start that line with # Symbol.
+
+
+Syntnax:
+
+# This is a Comment.

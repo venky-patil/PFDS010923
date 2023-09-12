@@ -1,0 +1,801 @@
+Variable --> Variables are used to store a value.
+         --> Variable is something which is going to hold the memory location of any data.
+
+
+Example:
+
+x = "Praty1234a$%^&*"  #Here x is a variable and Pratyush is my Data which is stored in x variable.
+
+print(x+"Srivastava")
+
+x = 10
+print("x") #x
+
+x = 10
+print(x) #10
+
+
+Types of Programming Languages:
+
+1.Static Typed Programming Language --> Static Typed  Programming language are those languages in which we 					need to define or declare the type of data that we are using in our 					program.
+                                    --> In Static programming we need to specify the datatype first before 					execution.
+
+Example of Static Typed Programming Language --> C/C++ AND JAVA
+
+In C:
+
+Adding Two Numbers
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+        int a=10;
+        int b=20;
+        int c=a+b;
+        printf("Sum is %d",&c)
+}
+
+
+2.Dynamic Typed Programming Languages --> Dynamic Typed Programming languages  are those language in which we 					  need not to define the datatype. At the Runtime Compiler will 					  automatically analyze the datatype.
+
+Example of Dynamic Typed Programming Language --> Python and JavaScript
+
+In Python:
+
+Adding Two Numbers in Python:
+
+a=10
+b=20
+c=a+b
+print(c)
+
+
+DataTypes --> Data+Types 
+          --> Represent which kind of Data we are using in our Program.
+
+Example:
+
+
+Phone_Number --> Integer
+Name         --> String
+Quantity     --> Float
+
+
+Note --> Python is a Dynamic Typed Programming Language that means We need not to mention
+         which kind of Data we are using in our Program.Internally PVM will automatically
+         Determine which kind of Datatype we are using in our Program.
+
+PVM --> Python Virtual Machine
+
+
+type()  --> This Functions will return the dataype which we are using in our Program
+
+
+n=10
+print(type(10)) #integer
+
+n="Ansh"
+print(type(n)) #String
+
+
+Types of Data Types:
+
+1.Numeric Datatypes --> int,float,complex
+2.Sequence Datatype --> list,string,tuples
+3.Boolean Datatype  --> True , False
+4.Dictionary
+5.Set
+
+
+Numeric Datatype
+=================
+
+Integer Datatype --> Represent the Integral values.
+
+Types of Integer Datatype:
+
+Postive Integers  --> 0,1,2,3,4,5.....Infinite
+Negative Integers --> -1,-2,-3,-4.....-Infinite
+
+Note --> If we want to represent a datatype without decimal then we are going to
+use integer datatype.
+
+
+#Example of Integer Datatype
+
+num = 1098
+print(type(num)) #int
+
+
+num = -98
+print(type(num)) #int 
+
+
+num =  0
+print(type(num)) #int
+
+
+Note --> In Other Programming Languages and Even in python 2.x version we are having
+         long datatype for handling large integer values But In python 3.x version
+         we don't have any long datatype and all the large integer values are going
+         to be handled by integer datatype.
+
+num = 9876543219
+print(type(num)) #int
+
+
+num = 1234567890123456789123456789123456789123456789
+print(type(num)) #int 
+
+Float Datatype --> Represents floating point numbers(Decimal Numbers)
+
+Two Types of Floating Numbers are There:
+
+1.Positive Floating point Numbers --> 1.1,1.2,12.3.......
+2.Negative Floating Point Numbers --> -0.1,-0.2.....
+
+Note --> If we want to represent any number with decimal then we are going
+to use float datatype.
+
+
+#Example of Float Datatypes:
+
+num = 1.2
+print(type(num)) #float
+
+num = 0.0
+print(type(num)) #float
+
+num = -0.02313
+print(type(num)) #float
+
+
+num = -0.0000000000000000000000000000000000000000000000000000000000000000001
+print(type(num)) #float
+
+
+Complex Datatype --> Any Number is in the form of 
+
+                a+bj
+
+                is known as Complex Number
+
+a is Real Part of the Number
+
+b is Imaginary Part of the Number
+
+j^2  Value is -1
+
+j Value is -1^(1/2)
+
+
+#Example of Complex Number
+
+#a+bj  -->  a is real part and b is imaginary part 
+
+num = 10+30j
+print(type(num)) #complex
+
+
+
+num = 10.0+30j
+print(type(num)) #Complex
+
+
+num = 30j
+print(type(num)) #Complex
+
+
+Note --> For Getting Real part Value We are having a variable which is real.This variable 
+         will always return the result in the form of floating pointing number.
+
+     --> For Getting the Value of Imaginary part we are having a variable which is imag.
+         This variable will always return the result in the form of floating pointing 
+         number.
+
+#Example of Complex Number with imag and real variables.
+
+num = 1+2j
+print(num.imag) #2.0
+
+
+num = 2j
+print(num.real) #0.0
+
+num = 30+55.9j 
+print(num.imag)  #55.9
+
+num = 10+20j
+print(num.real) #10.0
+
+num = 33.5j  
+print(num.real) #0.0
+
+
+num = 10-2j  
+print(num.real) #10.0
+
+num = 10-2j  
+print(num.imag) #-2.0
+
+
+num = 10j
+print(num) #10j
+
+
+num1 = 10+20j
+num2 = 1+2j
+print(num1+num2) #11+22j
+
+num1 = 10+20j
+num2 = 1+2j
+print(num1-num2) #9-18j
+
+
+num1 = 10+20j
+num2 = 1+2j
+print(num1*num2) #-30+40j
+
+(10+20j)(1+2j)
+10+20j+20j+40j^2
+10+40j-40
+-30+40j
+
+Note --> In real Time we are not using Complex Numbers
+     --> Complex numbers are used for computational or scientific programming that
+         is a reason ISRO DRDO and NASA are Using Python as a Core Programming Language.
+         As Other Programming Language don't have anything related to complex Datatype
+         and In python we can do many operations of complex datatype very easily.
+
+
+
+Boolean Datatype --> Boolean Simply Means True or False.
+                 --> In Python True Means 1 and False Means 0
+
+
+
+# Example of Boolean Datatype
+
+num1 = True
+print(type(num1)) #Bool
+
+num2 = False
+print(type(num2))
+
+
+num2 = True+False+True+False+True+True+True
+#       1  +  0  +  1 +  0  +  1 +  1 + 1
+print(num2) #5
+
+num1  = True+50.0
+#        1  +50.0
+print(num1) #51.0
+
+
+String Datatype --> String is the sequence or a collection of Characters.
+                --> If you are writing any thing within single quotes or double quotes 
+                    or triple quotes then that datatype will always be considered as
+                    a String Datatype.
+
+                --> In Python we Don't have Char Datatype whereas In Other Programming
+                    Languages we are having Char Datatype.
+
+                --> In Python If you are Taking one character either in Single quotes
+                    or in Double Quotes then that is also being considered as a
+                    String in Python.
+
+Note --> Characters means Any Symbol which is present in your Keyword.
+     
+     --> If are Storing a Single Character in Single Quotes then in other Programming
+         Language that datatype is going to be Considered as a Char Datatype.
+    
+     --> In Python we can use any type quotation there is no any difference in
+         single quotes,double quotes or triple quotes.
+
+
+Example of Char Datatype(Single Character within Single Quotes):
+
+num = '9'  #Char Datatype
+
+
+
+string1 = 'a'
+print(type(string1)) #String
+
+string1 = "10+20j"
+print(type(string1)) #String
+
+string1 ='''True'''
+print(type(string1)) #String 
+
+
+string1 ="Hi How are You I Hope Your Python Classes are Going Well"
+print(type(string1))#String
+
+
+x = "10.5"
+print(type(x))#String
+
+date = "08-08-2023"
+print(type(x))#String
+
+
+num1 = '9'
+print(type(num1)) #String
+
+num1 = "9"
+print(type(num1)) #String
+
+
+List Datatype --> It is Collection of Dissimilar Elements.
+              --> If we want to store multiple elements at a time as a single entity(Variable)
+                  then we are going to use List Datatype.
+              --> Square brakects are used to represent a List.
+              --> List Datatype is Mutable(Changeable)
+              --> Duplicates are allowed in Case of List.
+
+#Example of List Datatype:
+
+list1 = [1,9.5,"Java",10+20j,True]
+print(type(list1)) #list
+print(list1[2])  #Java
+print(list1[4])  #True
+list1[2] = "Python"
+print(list1)
+
+
+Tuple Datatype --> It is Collection of Dissimilar Elements.
+               --> If we want to store multiple elements at a time as a single entity(Variable)
+                   then we are going to use Tuple Datatype.
+               --> Parenthesis brakects are used to represent a Tuple.
+               --> Tuple Datatype is ImMutable(UnChangeable --> The Elements of Tuples are Fixed)
+               --> Duplicates are allowed in case of Tuple.
+
+#Example of Tuple Datatype:
+
+tuple1 = (1,9.5,"Java",10+20j,True)
+print(type(tuple1)) #tuple
+print(tuple1[3])#10+20j
+print(tuple1) #(1, 9.5, 'Java', (10+20j), True)
+tuple1[2] = "C++"
+print(tuple1) #Error
+
+
+Note --> In Case of Sequence Datatype The elements are going to be differentiate
+based on the Index Values and In Python Index is always started with 0.
+
+
+In Case of Sequence Datatypes:
+
+1.These are the Collection of Elements/Characters.
+2.These are Ordered collection of Elements/Characters(Indexing).
+3.Duplicates are allowed
+
+
+Set Datatype --> Collection of Dissimilar Elements.
+             --> Curly Braces are used to represent a Set.
+             --> In Case of Set Duplicates are not Allowed.
+             --> Set is a unordered of Collection of Elements(Indexing is not Possible)
+             --> Sets are Muteable(Changeable)
+
+
+#Example of Set Datatype:
+
+set1 = {10,20,98.5,10,20,"Hi"}
+print(type(set1)) #Set
+print(set1) #{10, 'Hi', 20, 98.5}
+set1.add("Java")
+print(set1) #{98.5, 10, 'Hi', 20, 'Java'}
+            
+
+Note --> If we don't want duplicate values then we are going to use Sets.
+
+Dictionary Datatype --> Dictionary is also a collection of Elements but the Elements are going to 
+                        stored in the Form of Keys and Values.
+                    --> Curly braces are used to represent a Dictionary and the Key and Value are
+                        seperated by a Colon.
+                    --> Dictionary keys must be unique.They must not not be duplicate(If you are using duplicate keys then only last key value pair will be considered.)
+                    --> Dictionaries are Mutable(Changeable).
+                    --> Dictionary is also unordered collection of Elements(Indexing is not possible).
+
+#Example of Dictionary Datatype:
+
+dict1 = {"name":"Pratyush" , "College":"Edyoda Digital University","Batch":"DS010923",10:20,True:False,"name":"Aman"}
+print(type(dict1)) #Dictionary
+print(dict1)
+print(dict1["name"]) #Aman
+print(dict1["College"]) #"Edyoda Digital University"
+dict1["Batch"] = "PF010923"
+dict1["name"] = "Ayush"
+print(dict1) #{'name': 'Aman', 'College': 'Edyoda Digital University', 'Batch': 'PF010923', 10: 20, True: False}
+
+
+TypeCasting(Conversion) --> The process of Converting one Datatype to Another
+                            is known as TypeCasting(Conversion).
+
+Functions which are used for TypeCasting Purpose:
+
+For Converting any datatype to Integer  --> int()
+For Converting any datatype to Float    --> float()
+For Converting any datatype to boolean  --> bool()
+For Converting any datatype to complex  --> complex()
+For Converting any datatype to string   --> str()
+
+Possibilities of Conversion of One Datatype to Another:
+
+Conversion of Float Datatype to Integers --> Possible
+
+num = 10.5
+print(type(num)) #float
+print(num) #10.5
+con = int(num)
+print(type(con)) #integer
+print(con) #10
+
+Conversion of Complex Datatype to Integer --> Not Possible
+
+num = 10.5+20j
+print(type(num)) #complex
+print(num) #10+20j
+con = int(num)
+print(type(con)) #Error
+
+Conversion of Boolean Datatype to Integer --> Possible
+
+num = True
+print(type(num)) #bool
+print(num) #True
+con = int(num)
+print(type(con)) #integer
+print(con) #1
+
+num = False
+print(type(num)) #bool
+print(num) #False
+con = int(num)
+print(type(con)) #integer
+print(con) #0
+
+Conversion of String to Integer Datatype --> Possible/Not Possib;e
+
+Note --> If we are converting string datatype to integer datatype then
+TypeCasting only being done if the content within the string is in the form 
+of integer datatype only else TypeCasting is not possible.
+
+num = "10"
+print(int(num)) #10
+
+num = "10.5"
+print(int(num)) #Error 
+
+num = "Hi"
+print(int(num)) #Error
+
+num = "10+20j"
+print(int(num)) #Error
+
+num = "10Hi"
+print(int(num)) #Error
+
+Conversion of List Datatype to Integer Datatype --> Not Possible 
+
+num = [10,20,30,40,50]
+print(int(num)) #Error
+
+
+Conversion of Tuple Datatype to Integer Datatype --> Not Possible 
+
+num = (10,20,30,40,50)
+print(int(num)) #Error
+
+
+
+Conversion of Set Datatype to Integer Datatype --> Not Possible 
+
+num = {10,20,30,40,50}
+print(int(num)) #Error
+
+
+Conversion of Dictionary Datatype to Integer Datatype --> Not Possible 
+
+num = {10:20,20:30,30:40,40:50,50:60}
+print(int(num)) #Error
+
+Conversion of Integer Datatype to Float --> Possible
+
+num = 10
+print(float(num)) #10.0
+
+
+Conversion of Complex Datatype to Float --> Not Possible
+
+num = 10+20j
+print(float(num)) #Error
+
+Conversion of Boolean Datatype to Float --> Possible 
+
+num = True
+print(float(num)) #1.0
+
+num = False 
+print(float(num))#0.0
+
+Conversion of String Datatype to Float --> Possible/Not Possible
+
+Note --> If we are converting string datatype to float datatype then
+TypeCasting only being done if the content within the string is either in the form 
+of integer or float datatype only else TypeCasting is not possible.
+
+num = "10"
+print(float(num)) #10.0
+
+num = "10.5"
+print(float(num)) #10.5
+
+num = "Hi"
+print(float(num)) #Error
+
+num = "10+20j"
+print(float(num)) #Error
+
+num = "10Hi"
+print(float(num)) #Error
+
+
+Conversion of List Datatype to Float Datatype --> Not Possible 
+
+num = [10,20,30,40,50]
+print(float(num)) #Error
+
+
+Conversion of Tuple Datatype to float Datatype --> Not Possible 
+
+num = (10,20,30,40,50)
+print(float(num)) #Error
+
+
+
+Conversion of Set Datatype to float Datatype --> Not Possible 
+
+num = {10,20,30,40,50}
+print(float(num)) #Error
+
+
+Conversion of Dictionary Datatype to float Datatype --> Not Possible 
+
+num = {10:20,20:30,30:40,40:50,50:60}
+print(float(num)) #Error
+
+
+#Conversion of Integer Datatype to Complex --> Possible
+
+num = 10
+print(complex(num)) #10+0j
+
+
+#Conversion of float Datatype to Complex --> Possible
+
+num = 10.5
+print(complex(num)) #10.5+0j
+
+
+Conversion of Boolean Datatype to Complex -->Possible
+
+num = True 
+print(complex(num)) #1+0j
+
+Conversion of String Datatype to Complex --> Possible/Not Possible.
+
+Note --> If we are converting string datatype to complex datatype then
+TypeCasting only being done if the content within the string is in the form 
+of integer,float or complex datatype only else TypeCasting is not possible.
+
+num = "10"
+print(complex(num)) #10+0j
+
+num = "10.5"
+print(complex(num)) #10.5+0j
+
+num = "Hi"
+print(int(num)) #Error
+
+num = "10+20j"
+print(int(num)) #10+20j
+
+num = "10Hi"
+print(int(num)) #Error
+
+
+num = "10+20j+19"
+print(int(num)) #Error
+
+
+
+Conversion of List Datatype to Complex Datatype --> Not Possible 
+
+num = [10,20,30,40,50]
+print(complex(num)) #Error
+
+
+Conversion of Tuple Datatype to complex Datatype --> Not Possible 
+
+num = (10,20,30,40,50)
+print(complex(num)) #Error
+
+
+
+Conversion of Set Datatype to complex Datatype --> Not Possible 
+
+num = {10,20,30,40,50}
+print(complex(num)) #Error
+
+
+Conversion of Dictionary Datatype to complex Datatype --> Not Possible 
+
+num = {10:20,20:30,30:40,40:50,50:60}
+print(complex(num)) #Error
+
+
+String Conversion --> We can convert any Datatype or any data in the form of String.
+
+
+num = 10
+print(str(num))#'10'
+
+num=10.5
+print(str(num))#'10.5'
+
+num = 10+20j
+print(str(num))#'10+20j'
+
+num = True
+print(str(num))#'True'
+
+num = [10,20,30,40]
+print(str(num)) #'[10,20,30,40]'
+
+num = (10,20,30,40)
+print(str(num)) #'(10,20,30,40)'
+
+num = {10,20,30,40}
+print(str(num)) #'{10,20,30,40}'
+
+num = {10:20,20:30,30:40,40:50}
+print(str(num)) #'{10:20,20:30,30:40,40:50}'
+
+
+Boolean Conversion --> For Boolean Conversion Empty Content means False and rest all will return True.
+
+
+Empty Content --> 0,0.0,0+0j,False,[],(),{},"" --> False 
+
+#Example of Boolean Conversion:
+
+num = 0
+print(bool(num))#False
+
+num = 0.0
+print(bool(num)) #False
+
+num = 0.00000000000000000000000000000000000000000000001
+print(bool(num)) #True
+
+num = "0"
+print(bool(num))#True
+
+
+num = ""
+print(bool(num)) #False
+
+
+Important Functions For Converting List,Set,Tuple and Dictionary:
+
+For converting any datatype to List --> list()
+For converting any datatype to tuple --> tuple()
+For converting any datatype to set --> set()
+For converting any datatype to Dictionary --> dict()
+
+Possibilities of Conversions:
+
+#Conversion of List To Tuple --> Possible
+
+num = [10,20,30,40,50]
+print(tuple(num))#(10,20,30,40,50)
+
+#Conversion of List To Set --> Possible
+
+num = [10,20,30,40,50,10,20]
+print(set(num))#{10,20,30,40,50}
+
+Note --> If we are converting list to set then the duplicates which are present in list
+will not be considred in set as set doesnot allows duplicates.
+
+#Conversion of List To Dictionary --> Not Possible 
+
+
+num = [10,20,30,40,50]
+print(dict(num)) #Error
+
+Conversion of Tuple to List --> Possible 
+
+num = (10,20,30,40,50)
+print(list(num))#[10,20,30,40,50]
+
+Conversion of Tuple to Set --> Possible 
+
+num = (10,20,30,40,50,10,20)
+print(set(num))#[10,20,30,40]
+
+Note --> If we are converting tuple to set then the duplicates which are present in tuple
+will not be considred in set as set doesnot allows duplicates.
+
+
+#Conversion of Tuple To Dictionary --> Not Possible 
+
+
+num = (10,20,30,40,50)
+print(dict(num)) #Error
+
+Conversion of Set to List --> Possible 
+
+num = {10,20,30,40,50}
+print(list(num)) #[10,20,30,40,50]
+
+
+
+Conversion of Set to Tuple --> Possible 
+
+num = {10,20,30,40,50}
+print(tuple(num)) #(10,20,30,40,50)
+
+Conversion of Set to Dictionary --> Not Possible 
+
+num = {10,20,30,40,50}
+print(dict(num)) #Error
+
+
+Conversion of Dictionary to List ---> Possible
+
+num = {10:20,20:30,40:50}
+print(list(num))#[10,20,40]
+
+
+Conversion of Dictionary to Tuple ---> Possible
+
+num = {10:20,20:30,40:50}
+print(tuple(num))#(10,20,40)
+
+Conversion of Dictionary to Set ---> Possible
+
+num = {10:20,20:30,40:50}
+print(set(num))#{10,20,40}
+
+
+#Conversion of String to List --> Possible 
+
+num = "Hi How Are You"
+print(list(num)) #['H', 'i', ' ', 'H', 'o', 'w', ' ', 'A', 'r', 'e', ' ', 'Y', 'o', 'u']
+
+#Conversion of String to Set --> Possible 
+
+num = "Hi How Are You"
+print(set(num)) #{' ', 'w', 'A', 'H', 'Y', 'e', 'o', 'r', 'i', 'u'}
+
+
+#Conversion of String to Tuple--> Possible 
+
+num = "Hi How Are You"
+print(tuple(num)) #('H', 'i', ' ', 'H', 'o', 'w', ' ', 'A', 'r', 'e', ' ', 'Y', 'o', 'u')
+
+#Conversion of String to Dictionary --> Not Possible
+
+num = "Hi How Are You"
+print(dict(num))  #Error
+
+
+
+
+
+
+
