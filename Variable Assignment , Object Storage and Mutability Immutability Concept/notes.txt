@@ -1,0 +1,181 @@
+Keywords  --> In Python Some reserved Words/Predefined Words  are there and that Words
+              are known as Keywords.Each and Every Keyword is already defined by Python.
+          
+          --> In Python 3.10 Version 35 Keywords are There.
+
+Example:
+
+import Keyword
+print(keyword.kwlist)
+
+List of Keyword in Python:
+
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 
+'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 
+'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 
+'raise', 'return', 'try', 'while', 'with', 'yield'].
+
+What is an Object?
+
+Object --> The Real World Entity is Nothing but an Object.
+       --> Each and Every object is having Behaviour(Functionality) and Properties(Data).
+
+Example of Objects:
+
+Object as a Human --> Behaviour(Functionality) --> Eating,Thinking,Reading,Programming,Chatting.
+                      Properties(Data)         --> Name,Gender,Age,Appearance...
+
+Object as a Mobile --> Behaviour(Functionality) --> Calling,Browsing,Messaging,Recording,Games..
+                       Properties(Data)         --> Model,RAM,ROM,SPACE,ANDROID V...
+
+
+Object as a Car   --> Behaviour(Functionality) --> Driving,Audio System,AC...
+                      Properties(Data)         --> Color,Brand,Engine Type,Mileage... 
+
+
+
+Object as a Dog  --> Behaviour(Functionality)  --> Barking,Loyality,Running,PLaying...
+                     Properties(Data)          --> Color,Breed,Apperance,Gender...
+
+Object as an Television --> Behaviour(Functionality) --> Wifi,Browsing,Android...
+                            Properties(Data) --> Model,Color,ScreenSize,Screen Version,Brand,Price
+ 
+In Python Everything is an Object?
+
+Object --> Physical existance of a class.
+
+Class --> Blueprint of an Object.
+
+In Python Each and Everything is nothing but an Ovject that is a reason when we are going 
+to check the datatype of any data then we will get something like class xxx.Thatmeans 
+each and every datatype in python is also an object as class comes into picture,
+
+num = 10
+print(type(num))#<class 'int'>
+
+list1 = [10,20,30]
+print(type(list1))#<class 'list'>
+
+
+How Objects are Stored in Memory?
+
+In Python each and every Thing is an object then for storing objects in Our Memory 
+we are having a Private Heap Block and Whatever objects are there in python all 
+those objects are going to store in that private heap part.
+
+
+Practice Question on Number of Objects?
+
+1 . x = 10.5  #1 Float Object.
+
+2.  x = []    #1 List Object 
+
+3. x = [10,20,30]   # 1 List Object and 3 Int Object
+
+4. x = {10,20,30,20,20,10,20,40,50,60} # 1 Set Object and 6 Int Object.
+
+5. x = [10,20,"Hi How Are you",{10,20,30,40,10,20},3.4]  #10 Objects
+
+6. x = {10,20,30,40,10,20,"Hi","Java",[10,20,30]} # 11 Objects
+
+Mutability Vs Immutability?
+
+
+Mutability --> Content can be changeable.
+
+
+Immutability --> Content cannot be changed.
+
+
+Note --> All standard datatypes(int,float,string,complex,boolean) are immutables along 
+         with that Tuples(Sequence) is also an immutable object.
+
+If we are Trying to perform changes in Immutable Objects Then:
+
+Two Possibilites are There:
+
+1. If we are trying to perform changes in Standard Object then because of that change 
+a new object will be created always. 
+
+2.If we are trying to perform any change in Tuple object then directly we will get an 
+error.
+
+Important function:
+
+id() --> return the Memory location of an object.
+
+
+#Immutability Check for Integer Datatype
+
+number = 10
+print(id(number))#2465393738256
+number = number+20
+print(id(number)) #2465393738896
+
+
+#Immutability Check for float Datatype
+
+number = 10.5
+print(id(number))#2463768748304
+number = number+20.5
+print(id(number)) #2463768748464
+
+
+#Immutability Check for String Datatype
+
+number = "Hi"
+print(id(number))#2168630554800
+number = number+"How Are You"
+print(id(number)) #2168630879792
+
+
+#Immutability Check for Boolean Datatype
+
+number = True
+print(id(number))#140723151821672
+number = number+True
+print(id(number)) #2788678369552
+
+#Immutability Check for Complex Datatype
+
+number = 10+20j
+print(id(number))#2556265734128
+number = number+1+2j
+print(id(number)) #2556265734480
+
+#Immutability Check for Tuple Datatype
+
+# number = (10,20,30)
+# print(id(number))#1282724666880
+# number[1] = 200  #Error
+
+
+
+#Mutability check for List Object
+
+number = [10,20,30,40,50]
+print(id(number))#
+number[2] = 2000  
+print(id(number))
+
+
+Immutable Objects --> Integer,Float,Complex,Boolean,String,Tuples.
+
+Mutable Objects   --> Lists,Set and Dictionary.
+
+
+Important Notes:
+
+Dictionary is a Collection of Keys and Values.
+
+Keys cannot be of mutable Datatype.(Error)
+
+We cannot use Mutable Objects(List,Set,Dictionary) as a Key in dictionary.
+
+
+
+
+
+
+
+

@@ -1,0 +1,144 @@
+Operators --> are the symbols that are used to perform a specific task or operation.
+
+Example: 
+        
+        + --> Addtion
+
+        * --> Multiplication
+
+Types of Operators in Python:
+
+1.Arithemtic Operator 
+2.Comparison or Relational Operator
+3.Assignment Operator 
+4.Membership Operator(in and not in)
+5.Identity Operator(is and is not)
+6.Logical Operator(and or not)
+
+Arithemtic Operator:
+
+1) + --> Addtion
+2) - --> Subtraction
+3) * --> Multiplication
+4) / --> Division
+5) //--> Floor Division
+6) % --> Modulus/Reminder 
+7) **--> Exponential/Power
+
+Example of Arithemtic Operators:
+
+a = 4.0
+b = 2
+print("a+b=",a+b) #6
+print("a-b=",a-b) #2
+print("a*b=",a*b) #80
+print("a/b=",a/b) #2
+print("a//b=",a//b) #2
+print("a%b=",a%b) #0
+print("a**b=",a**b)
+
+Note --> / Operator will always return the answer in the form of Float.
+     --> if we are using // division then if any of the argument is of Float type then
+         the result will always be in the form of float only else the answer will
+         be in the form in integer.
+
+Comparison or Relational Operator --> These Operator will always return True and False.
+                                  --> These operators are used in Conditional Statement.
+
+1) >  --> Greater Than 
+2) <  --> Less Than
+3) >= --> Greater Than or Equal To 
+4) <= --> Less Than or Equal To
+5) == --> Equal To 
+6) != --> Not Equal To 
+
+Example of Comparison Operator:
+
+a = 10
+b = 20
+print(a>b) #False 
+print(a<b) #True 
+print(a>=b) #False
+print(a<=b) #True 
+print(a==b) #False 
+print(a!=b) #True
+
+
+Assignment Operator --> This Operator is used to assign a value to a variable.
+
+1) =  --> Assignment Operator 
+
+Example:
+
+x = 10
+
+Short Hand Notation --> We can also combine more than one operator at Time.
+
+x = x+10   --> x+=10
+
+x = x-10   --> x-=10
+
+x = x//10  --> x//=10
+
+x = x*10   --> x*=10
+
+x = x%10   --> x%=10
+
+x = x**2   --> x**=2
+
+Membership Operator --> It is used to Check weather an element/Object is a member 
+                        of given sequence or not if the element is a member of the given 
+                        sequence the in operator will return True else it will False .
+                    
+                    --> This operator will always return result in the form True OR False.
+
+
+1) in  --> if the given element is present in the given  sequence then in operator will return True else False
+2) not in --> if the given element is not present in the given  sequence then not in operator will return True else False
+
+Sequence means List,Tuple,Set,String,Dictionary.
+
+
+Example of Membership Operator.
+
+x = [10,20,30,40,50,60]
+print(60 in x) #True 
+print(100 in x) #False 
+print(200 not in x) #True
+print(20 not in x) #False
+
+x = "python is a high level programming language"
+print("p" in x) #True
+print("python" in x) #True 
+print("Python" in x) #False
+
+
+Identity Operator --> It is used to Check weather Two objects are pointing to same memory
+                      location(address) or not.if both objects are pointing to the 
+                      same memory location then is operator will return True else it will
+                      return False.
+                    
+                    --> This operator will always return result in the form True OR False.
+
+
+1) is  --> if both the objects are pointing to same memory location then is operator will return True else False
+2)  is not --> if both the objects are not pointing to same memory location then is operator will return True else False
+
+Example :
+
+x = "Hi"
+y = x+"How are You"
+print(x is y) #False
+
+x = [10,20,30]
+y = x+20
+print(x is not y)#True
+
+x = 10.5
+y = 10.5
+print(x is y) #False 
+
+
+x=10
+y=10
+print(x is y)
