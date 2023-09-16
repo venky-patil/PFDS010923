@@ -1,0 +1,315 @@
+Operators --> are the symbols that are used to perform a specific task or operation.
+
+Example: 
+        
+        + --> Addtion
+
+        * --> Multiplication
+
+Types of Operators in Python:
+
+1.Arithemtic Operator 
+2.Comparison or Relational Operator
+3.Assignment Operator 
+4.Membership Operator(in and not in)
+5.Identity Operator(is and is not)
+6.Logical Operator(and or not)
+
+Arithemtic Operator:
+
+1) + --> Addtion
+2) - --> Subtraction
+3) * --> Multiplication
+4) / --> Division
+5) //--> Floor Division
+6) % --> Modulus/Reminder 
+7) **--> Exponential/Power
+
+Example of Arithemtic Operators:
+
+a = 4.0
+b = 2
+print("a+b=",a+b) #6
+print("a-b=",a-b) #2
+print("a*b=",a*b) #80
+print("a/b=",a/b) #2
+print("a//b=",a//b) #2
+print("a%b=",a%b) #0
+print("a**b=",a**b)
+
+Note --> / Operator will always return the answer in the form of Float.
+     --> if we are using // division then if any of the argument is of Float type then
+         the result will always be in the form of float only else the answer will
+         be in the form in integer.
+
+Comparison or Relational Operator --> These Operator will always return True and False.
+                                  --> These operators are used in Conditional Statement.
+
+1) >  --> Greater Than 
+2) <  --> Less Than
+3) >= --> Greater Than or Equal To 
+4) <= --> Less Than or Equal To
+5) == --> Equal To 
+6) != --> Not Equal To 
+
+Example of Comparison Operator:
+
+a = 10
+b = 20
+print(a>b) #False 
+print(a<b) #True 
+print(a>=b) #False
+print(a<=b) #True 
+print(a==b) #False 
+print(a!=b) #True
+
+
+Assignment Operator --> This Operator is used to assign a value to a variable.
+
+1) =  --> Assignment Operator 
+
+Example:
+
+x = 10
+
+Short Hand Notation --> We can also combine more than one operator at Time.
+
+x = x+10   --> x+=10
+
+x = x-10   --> x-=10
+
+x = x//10  --> x//=10
+
+x = x*10   --> x*=10
+
+x = x%10   --> x%=10
+
+x = x**2   --> x**=2
+
+Membership Operator --> It is used to Check weather an element/Object is a member 
+                        of given sequence or not if the element is a member of the given 
+                        sequence the in operator will return True else it will False .
+                    
+                    --> This operator will always return result in the form True OR False.
+
+
+1) in  --> if the given element is present in the given  sequence then in operator will return True else False
+2) not in --> if the given element is not present in the given  sequence then not in operator will return True else False
+
+Sequence means List,Tuple,Set,String,Dictionary.
+
+
+Example of Membership Operator.
+
+x = [10,20,30,40,50,60]
+print(60 in x) #True 
+print(100 in x) #False 
+print(200 not in x) #True
+print(20 not in x) #False
+
+x = "python is a high level programming language"
+print("p" in x) #True
+print("python" in x) #True 
+print("Python" in x) #False
+
+
+Identity Operator --> It is used to Check weather Two objects are pointing to same memory
+                      location(address) or not.if both objects are pointing to the 
+                      same memory location then is operator will return True else it will
+                      return False.
+                    
+                    --> This operator will always return result in the form True OR False.
+
+
+1) is  --> if both the objects are pointing to same memory location then is operator will return True else False
+2) is not --> if both the objects are not pointing to same memory location then is operator will return True else False
+
+Example :
+
+x = "Hi"
+y = x+"How are You"
+print(x is y) #False
+
+x = [10,20,30]
+y = x+20
+print(x is not y)#True
+
+x = 10.5
+y = 10.5
+print(x is y) #False 
+
+
+x=10
+y=10
+print(x is y) #True
+
+Difference Between is Operator = operator and Equal to Operator ?
+
+is(Identity) --> is used to Compare Two Memory Locations
+
+=(Assignment)  --> is used to assign a Value to a Variable.
+
+==(Equal to) --> is used to compare two value
+
+Example:
+
+x = 10.5
+y = 10.5
+print(x==y) #True
+print(x is y) #False
+
+Memory Utilization In Python?
+
+In Python If there is any requirement of  creating an object then python will never
+create an object immediatly it will first check weather  the object with the same 
+content is already present in the heap memory or not if the object is already 
+present then PVM will never create an object it will redirect the older object with 
+the given variable and if the object is not present then PVM will create an object.
+
+
+This is applicable for Integer and String
+
+
+For Other Datatype it depends on Compiler/Interpretor
+
+--> In VS Code or In Any Python IDE with .py Extension --> True 
+
+--> In Jupyter Notebook .ipynb --> False
+
+Logical Operator --> and , or and not
+
+There are 3 Logical operators:
+
+1. and 
+2. or 
+3. not 
+
+
+Case 1 : For Boolean Datatype
+
+Truth Table of Logical Operator :
+
+
+A           B          A and B           A or B             not A 
+
+True      False         False              True              False                    
+True      True          True               True              False
+False     False         False              False             True
+False     True          False              True              True
+
+and  --> If any one argument is False then result is False else result is True.
+
+or   --> if any one argument is True then result is True  else result is False 
+
+not  --> True means False  and False meand True.
+
+#Example of Boolean Datatype with Logical Operator:
+
+print(True and False)  #False 
+print(True and True)   #True 
+print(False or True)   #True
+print(not False)       #True 
+print(True and False or True)  #True
+
+Case 2 : For Non Boolean Datatype:
+
+Note --> Empty Content --> 0,0.0,0+0j,False,"",[],(),{}  --> False 
+         Rest Content  --> True 
+
+
+Behaviour of and Operator with Non Boolean Datatype:
+
+x and y --> if x evalutes to False then x will be the result else y will be result.
+
+
+Example:
+
+
+print(10 and 20)  #20
+print(20.4 and 0) #0
+print("hi" and "bye") #bye 
+print(0 and "Hi") #0
+print([] and []) #[]
+print(0.001 and 0)  #0
+print(0.001 and [1,2,3] and 0.0) #0.0
+print([] and (1,2,3) and 0+0j and "") #[]
+
+
+x or y  --> if x evalutes to  True then result will be x else result will be y 
+
+
+Example:
+
+print(0 or 10) #10
+print("" or 99.9) #99.9
+print("Hi" or "Bye") # Hi
+print([] and 10.98 or [10,20,30] and 76+20j or 0.0) #76+20j
+
+[] and 10.98 --> []
+
+[] or [10,20,30] --> [10,20,30]
+[10,20,30]and 76+20j -->76+20j
+76+20j or 0.0 --> 76+20j 
+
+
+1+2+3+4+5+6+7+8
+3+3+5+6+7+8
+6+5+6+7+8
+11+6+7+8
+17+7+8
+24+8
+31
+
+
+
+print(not 10) #False 
+print(not []) #True 
+print(not 0.001) #False
+
+Operator Procedence:
+
+if we are having multiple operator in an expression then in which order 
+the operator will be executed will be decided with the help of operator procedence.
+
+
+Operators :
+
+() 
+
+**
+
+*,/,//,%
+
++,-
+
+Comparison Operator(==,<=,>=.!=.>,<)
+
+not 
+
+and 
+
+or 
+
+
+BODMAS --> Brackets , Power ,Divsion,Multiplication,Addition,Subtraction,Comparison,Logical 
+
+
+3/2*4+3+(10/5)**3-2
+3/2*4+3+(2.0)**3-2
+3/2*4+3+8.0-2
+1.5*4+3+8.0-2
+6.0+11.0-2
+17.0-2
+15.0
+
+
+3//2+(40/8)**2+3-5
+3//2+5.0**2+3-5
+3//2+25.0+3-5
+1+25.0+3-5
+29.0-5
+24.0
+
+input() --> This Function is used to take input from the end user .
+        --> This function will always consider everything in the form of string.
+
