@@ -1,0 +1,407 @@
+Types of Statements in Python
+=============================
+
+1. Conditional Statements --> if,elif and else.
+2. Iterative Statements(Loops) --> for and while
+3. Transfer Statements --> Break and Continue.
+
+Len() Function --> This Function will return the number of elements present inside 
+==============     a sequence(List,Tuple,Set,Dictionary,String).
+
+Example of Len Function
+==========================
+
+In Case of List
+
+num = [10,20,30,40,50,60,70]
+print(len(num)) #7
+
+In Case of Tuple
+
+num = (10,20,30)
+print(len(num))#3 
+
+In case of Set 
+
+num = {10,20,30,40,10,20,30}
+print(len(num))#4
+
+In Case of Dictionary
+
+num = {10:20,30:40,50:60,70:80}
+print(len(num)) #4
+
+In Case of String 
+
+num = "Hi How are You"
+print(len(num)) #14
+
+In Case of int 
+
+num=10
+print(len(num)) #Error
+
+Range Function() ==> This function is used to generate a sequence of element.
+================ ==> Range Function is Immutable.
+                 ==> Range function will always return an object and we cannot use that
+                     object directly so for using it either we need to typecast it into list 
+                     or else we can use for loop.
+
+Range will always take three arguments:
+
+First Argument(Optional) --> Start Value --> By Default Value is 0
+
+Second Argument(Mandatory) --> End Value --> Mandatory To Give the ending value 
+
+Third Argument(Step)(Optional) --> Gap Value --> Default value is 1.
+
+
+Note: In Range Function if we are giving only one argument then that argument will 
+===== be considered as Second Argument which is ending value and end will go till end-1.
+
+Example: Generate Number From 0 to 9 
+======================================
+
+First Way:
+==========
+num = list(range(9))  #first_argument = 0 , Second_argument = 9 , third_argument = 1
+print(num)
+
+Second Way:
+===========
+
+num = list(range(0,9)) #first_argument=0,Second_argument=9, third_argument=1
+print(num)
+
+Third Way:
+==========
+
+num = list(range(0,9,1)) #first_argument = 0,Second_argument=9,third_argument=1 
+print(num)
+
+
+Example 2: Generate Numbers From 10 to 100
+===========================================
+
+First Way:
+===========
+
+num = list(range(10,100)) #10 to 99
+print(num)
+
+Second Way:
+===========
+
+num = list(range(10,100,1)) #10 to 99
+print(num)
+
+
+Example of Step Value:
+=======================
+
+Generate Numbers from 0 to 9 Alternatively
+
+Step --> 1 --> Skip 0 elements
+Step --> 2 --> Skip 1 elements
+Step --> 3 --> Skip 2 Elements 
+..............................
+..............................
+Step --> n ---> Skip n-1 Elements 
+
+num = list(range(0,9,1)) # 
+print(num)
+
+num = list(range(0,9,2)) #
+print(num)
+
+num = list(range(10,30,5)) #10,15,20,25
+print(num)
+
+num = list(range(5,20,6)) #5,11,17
+print(num)
+
+Iterative Statements
+======================
+
+When we want to execute a group of Statement multiple times then we are going
+to use Iterative Statements(Loops).
+
+In Python Two Types of loops are there:
+
+1.For Loops
+2.While Loops
+
+Suppose that i need to print
+
+Approach:
+
+1.Manually Type hello world 1000 Times.
+
+
+
+print("Hello World")
+print("Hello World")
+print("Hello World")
+print("Hello World")
+print("Hello World")
+print("Hello World")
+print("Hello World")
+print("Hello World")
+
+
+2.We can run loop from 0 to 1000 and within two lines we can print hello world 
+1000 times.
+
+for i in range(0,1000):
+    print("Hello world")
+
+Note --> First Approach is not feasibility because we need to write 1000 lines 
+of code and every line is same that will increase code length and also decrese 
+code reusability. In the second approach we are using loop and by using only lines
+we can print hello world 1000 times In this case code length is also not increased 
+and there is no any duplicacy.
+
+For Loops
+=========
+If we want to execute a number of statements in some sequence(List,Set,Tuple,String,Dictionary,range)
+then we are going to use For Loop.
+
+Syntax:
+
+for i in sequence:
+    body/statement 
+
+i = Iterator 
+
+
+Example of For Loop:
+=====================
+
+Python Program to Print each and every Element of  List.
+==============================================================
+
+list1 = [10,20,30,40,50,60]
+for i in list1:
+    print(i) 
+
+
+Python Program to Print each and every Character of a String.
+==============================================================
+
+string1 = "Edyoda"
+for i in string1:
+    print(i)  
+
+
+# Python Program to Print Numbers from 0 to 9:
+# ==============================================
+
+for i in range(0,10): #0 1 2 3 4 5 6 7 8 9
+    print(i)  
+
+
+Nested Loops
+============
+Nested Loops means Loops inside Loops.
+
+Syntax:
+
+for i in sequence: 
+    for j in sequence:
+        body/statements
+
+Note --> In Case of Nested Loop Once all iteration of inner loop will be completed
+         then pointer will come to the outer loop next iteration.
+
+#Example of Nested Loops
+
+for i in range(3):
+    for j in range(3):
+        print("I value is : ",i,"J Value is",j)
+
+
+for i in range(2): #0,1
+    for j in range(3): #0,1,2
+        print(i,j)
+
+while Loop
+===========
+
+When we want to execute a group of statement multiple times based on a certain
+condition then we are going to use While loop.
+
+Syntax of While Loop:
+=====================
+
+while condition:
+    body/statement 
+    increment/decrement
+
+
+Example:
+=========
+Python Program to Print Hello World 5 Times:
+===============================================
+i = 0
+while i<5:
+    print("Hello World")
+    i=i+1
+
+
+Infinite Loops --> if we want to write infinite loops in python then within the 
+condition we can give any constant value then that will be considered as True and 
+if you are giving empty value that the loop will not be executed as the condition 
+will be false in that case.
+
+
+while 1:
+    print("Hello") #Infinite Loop
+
+while "Infosys":
+    print("#") #Infinite Loop
+
+while "0":
+    print("Hi") #Infinite Loop
+
+while " ":
+    print("Hi") #Infinite Loop 
+
+while []:
+    print("By") #0 times 
+
+while "Edyoda":
+    print("Hi")#Infinite 
+
+while 0.0:
+    print("Hi")#0 times
+
+while "0.0":
+    print("Hi")#infinite 
+
+while "":
+    print("Hi") #0 times
+
+while True:
+    print("Hi") #Infinite
+
+
+while true:
+     print("Hi") #Error
+
+
+Transfer Statements
+===================
+Transfer Statements are used to Transfer the flow of the Program.
+
+There are Two Types of Transfer Statements:
+
+1.break 
+2.Continue
+
+
+Break --> if we are using break keyword in any loop then whenever PVM will encounter 
+break keyword then PVM will stop the iteration of that loop.
+
+Continue --> If we are using continue keyword in any loop then whenever PVM will encounter 
+continue keyword then PVM will skip the current iteration of that Loop.
+
+
+
+Example of Break Statements:
+
+for i in range(10): #0,1,2,3,4,5,6,7,8,9
+    if i==5:   #0   ,     1         2       3      4       
+        break
+    print(i)
+
+
+print("**************Login Page***************************")
+
+while True:
+    username = input("Enter User Name:")
+    password = input("Enter Password :")
+    if username=="Pratyush" and password=="100":
+        print("Yes You have Successfully Login to the Application")
+        break 
+    else:
+        print("Invalid Login")
+
+Example of Continue Statements:
+=================================
+
+cart = [100,200,200,300,40005,60004,5006,46000]
+for i in cart:
+    if i==300:
+        continue 
+    print(i)
+
+for i in range(10): #0,1,2,3,4,5,6,7,8,9
+    if i==3:
+       print("Continue Encounted SKip this iteration")
+       break
+    print(i)
+
+Note --> In Case of Nested Loop If we are using break statement is capable 
+         to terminate only one loop at a time.
+     --> In Case of Nested Loop If we are using Continue statement is capable 
+          to Skip current iteration for only one loop at a time.
+
+Example of break statement with NESTED LOOP:
+
+for i in range(3): #0,1,2
+    for j in range(3):  #0,1,2
+
+        if j==1:
+           break 
+        print(i,j)  #0,0
+    
+ 
+
+
+for i in range(4): #0,1,2,3
+    for j in range(2): #0,1
+        if j==0:        
+           break 
+        print(i,j)
+
+    
+Example of Continue Statement:
+
+for i in range(3):
+    for j in range(3):  
+        if j==1:
+            continue 
+        print(i)
+
+pass keyword --> The pass statement is used as a placeholder for future code.
+             --> If we want to implement a empty block of code then we need to give 
+                 pass keyword.
+            --> Pass keyword will not do anything its just a placeholder.
+
+Example:
+
+x=10
+
+if x==10:
+    pass
+
+
+for i in range(1,10):
+    pass 
+
+Abstraction --> Abstract Method
+
+i=0
+while i<5:
+    print("hi")
+    pass
+
+For  --> if we know Number of iteration(Sequence)(List,Tuple,Set,Dictionary,String,Range) then we will use for loop.
+
+While --> if we know any condition and based on that condition if we want to 
+execute a set of statements.
+
+
+
+
+
