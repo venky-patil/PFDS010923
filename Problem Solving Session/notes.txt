@@ -1,0 +1,47 @@
+How to Upload Assignments Using Github and Google Drive.
+==========================================================
+
+====================================================================================
+By Using Github
+====================================================================================
+
+Step 1: Do code your assignment questions in jupyter and then download your jupyter 
+        notebook files. ( How to download jupyter notebook file -> there will be an 
+        option above like files, view, simply clicking click on files then there 
+        will be options Download as -> click on .Ipynb and download )
+
+Step 2: Create an account on GitHub try to use Chrome 
+
+Step 3: Click on + icon right side of the dashboard of your account 
+
+Step 4: Click on New repository and write repository name i.e, file name and add 
+        description (optional) then click on Add a README file then click create 
+        repository 
+
+Step 5: There will be an add file click on that and then click on upload files
+
+Step 6: Then click on your uploaded files then wait 10 sec then right corner there will be ... Three dot click on that and there will be copy Permalink ( copy the link and past )
+
+Step 7: Copy the Link and paste that link in Submission link of the Portal
+
+=====================================================================================
+
+By Using Google Drive
+====================================================================================
+
+Step 1: Write your program on your local IDE such as Visual Studio Code.
+
+Step 2: Double check the scoring criteria of each assignment.
+
+Step 3: Test it and be sure that it is working.
+
+Step 4: If possible take a screenshot of the running code on your machine
+
+Step 5: Upload the Code and the screenshots on your google drive in a folder.
+
+Step 6: Make sure that you share the folder and the sheets on your google drive
+        with “View Only” permission for Everyone.
+
+Step 7: Copy the links to the sheet/folder and paste them into the links field during
+        assignment submission. 
+
