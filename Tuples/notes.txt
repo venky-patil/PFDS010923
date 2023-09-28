@@ -1,0 +1,405 @@
+Tuples
+=======
+
+--> Tuple is a collection is dissimilar elements.
+--> Tuples are exactly same as list the only difference between list and tuple 
+    is lists are mutable in nature whereas tuples are immutable in nature.
+--> Duplicates are allowed in Case of Tuple. 
+--> Tuple is a ordered collection of element(Indexing is important in case of Tuple)
+--> Parenthesis is used to represent a Tuple.
+
+Creation of tuple Object 
+=========================
+
+--> Empty tuple 
+
+    num = tuple()
+
+--> If we know the Element:
+
+    num = (10,20,30,40,50)
+
+--> One Element Tuple:
+
+    num = (10,)
+
+Important Note:
+================
+--> If we want to create a tuple with one element then it is mandatory to give comma 
+    after first element if we are giving comma after first element then python 
+    will not consider that object as a tuple then python will consider object 
+    which is your first element of element. 
+
+
+Example of Creation of Tuple
+==============================
+
+num = (10,20,30)
+print(type(num))#<class tuple>
+
+num = tuple()
+print(type(num))#<class tuple> 
+
+num = (10,)
+print(type(num))#<class tuple> 
+
+num = (10)
+print(type(num))#<class int>
+
+num = ("Hello")
+print(type(num))#<class string>
+
+
+Tuple Packing 
+==============
+
+--> In Python if we are not using any brackets for storing multiple elements in a 
+    single variable then  Python will consider all those elements as a part of 
+    the tuple.
+
+Example of Tuple Packing:
+==========================
+
+num = 10,20,"Hi","Hello",10.5
+print(num)
+print(type(num))
+
+
+Tuple UnPacking 
+===============
+
+x,y,z = 10,20,30
+print(x,y,z)
+
+Note --> If we are performing tuple unpacking then is mandatory that on the left hand side 
+         the number of variabls will always be equal to the length of the tuple 
+         if they are not equal then Python will raise an error.
+
+Example of Tuple unpacking
+===========================
+
+x,y,z = 10,20,30
+print(x)# 10,20,30 
+
+x,y = 10,20,30 
+print(x,y)#Error
+
+How we can access an Element of a Tuple.
+=========================================
+
+--> There are Two ways to Access an Element of a Tuple:
+
+1.Indexing 
+2.Slicing
+
+Indexing in Python
+===================
+--> With the help of Indexing we can access an Elements of a Tuple.
+
+Syntax:
+=======
+
+Tuple_name[index_number]
+
+Types of Indexing in Python
+=============================
+1.Positive Indexing  --> Left to Right  --> Forward Direction  --> First index is 0. 
+2.Negative Indexing  --> Right to Left  --> Backward Direction --> First index is -1.
+
+Example of Indexing in Python:
+==============================
+
+tuple1 = (10,20,30,40,"Java","Python")
+print(tuple1[-5])#20
+print(tuple1[3])#40
+print(tuple1[5])#'Python'
+print(tuple1[0])#10
+print(tuple1[-100])#Error
+print(tuple1[50])#Error
+
+
+Note 
+=====
+--> In Case of Indexing if the Given index is not present then indexing will give an 
+    indexing error.
+
+Slicing in Python
+==================
+--> Slicing means accessing the group of elements from a Tuple.
+
+Syntax of Slicing:
+==================
+
+Tuple_name[begin_index:end_index:step]
+
+Types of Slicing
+=================
+1.Positive Direction --> Forward Direction --> Left to Right 
+2.Negative Direction --> Backward Direction --> Right to Left 
+
+Note:
+=====
+In Case of Slicing Direction will be determined with the help of step value if 
+step value is Positive that means we need to perform Forward Slicing and if 
+step value is negative  then we need to perform Backward Slicing.
+
+Positive Slicing:
+=================
+
+Syntax: 
+
+tuple_name[begin_index:end_index:step]
+
+Begin_index(Optional) --> From where we have to consider a Slice --> Default value is 0.
+
+End_Index(Optional) --> Till which index we want slicing --> Default value is length of that list.
+
+Step(Gap)(Optional) --> Characters that we need to skipped --> Default Value is 1
+
+Note
+====
+--> If the step value is positive then only we can perform Positive slicing.
+--> End will always go till end-1.
+
+Example of Positive Slicing
+============================
+
+tuple1 = (10,20,30,40,"Java","Python")
+
+print(tuple1[10:20:2])#Empty Tuple
+print(tuple1[5:8:2])#('Python',)
+print(tuple1[2:5:3])#(30,)
+print(tuple1[::])#(10,20,30,40,"Java","Python")
+print(tuple1[-5:-1:2])#(20,40)
+print(tuple1[-100:-200:2])#Empty Tuple 
+#print(tuple1[0:0:0])#Error
+
+Note
+====
+--> In Case of Positive as well as Negative Slicing we will never get an error.if the 
+given index or step value is not present then also you will get output as empty
+tuple.
+
+--> The only possibility of error in case of slicing is if we are giving step value as 
+    0.
+
+--> If we can move in the given direction and the starting index and ending 
+    index is not given then default start and end index will be considered.
+
+
+Negative Slicing:
+=================
+Syntax: 
+
+tuple_name[begin_index:end_index:step(Negative)]
+
+Begin_index(Optional) --> From where we have to consider a Slice --> Default value is -1.
+
+End_Index(Optional) --> Till which index we want slicing --> Default value is -(length of that list + 1).
+
+Step(Gap) --> Characters that we need to skipped  --> Negative
+
+Note
+====
+--> If the step value is negative then only we can perform Negative slicing.
+--> End will always go till end+1.
+
+# Example of Negative Slicing
+# =============================
+
+tuple1 = (10,20,30,40,"Java","Python")
+print(tuple1[::-1])#('Python','Java',40,30,20,10)
+print(tuple1[-1:-5:-2])#('Python',40)
+print(tuple1[-100:-2:-1])#Empty Tuple
+print(tuple1[-2:-100:-2])#('Java',30,10)
+print(tuple1[10:-5:-2])#('Python',40)
+print(tuple1[100:-6:-3])#('Python',30)
+print(tuple1[:-1:0])#Error
+
+
+Note
+====
+--> In Case of Positive as well as Negative Slicing we will never get an error.if the 
+given index or step value is not present then also you will get output as empty
+tuple.
+
+--> The only possibility of error in case of slicing is if we are giving step value as 
+    0. 
+
+Important Note Related to Positive and Negative Slicing:
+===========================================================
+
+-->  In Case of Negative Slicing(Backward Direction) if we are not giving end value 
+     or the end index is not present then Python will consider default end value(-(Len+1)) 
+     for the same .
+
+--> In Case of Positive Slicing(Forward Direction) if we are not giving end value 
+    or the given end index is not present then Python will consider default end 
+    value ((len(list))) for the same.
+
+--> In Case of Positive Slicing if the start index is not present and the index value 
+    is negative then default value which is -len will be considred.
+
+
+
+Operators Used with Tuple
+============================
+
+There are Few Operators that we can use with List:
+
+1.Arithmetic Operator(+,*)
+2.Membership Operator(in and not in)
+3.Identity Operators(is and is not)
+4.Logical Operator(and or and not)
+5.Comparison Operator(<,>,<=,>=,==,!=)
+
+Arithmetic Operator:
+=====================
+1.Concatenation Operator(+) 
+=============================
+--> Concatenation Operator is used to join two list together.
+
+Example of Concatenation Operator(+):
+=====================================
+tuple1 = (10,20,30,40,50)
+tuple2 = (60,70,80,90,100)
+print(tuple1+tuple2)  # (10,20,30,40,50,60,70,80,90,100)
+
+Note
+====
+--> If we are using + Operator with list then it is mandatory that both the 
+    arguments must be tuple type of only.
+
+
+2.Repitition Operator(*)
+===========================
+--> This operator is used to repeat  Elements of a tuple n Number of Times.
+
+Example of Repitition Operator
+===============================
+
+tuple1 = (10,20,30)
+print(tuple1*3)#(10,20,30,10,20,30,10,20,30)
+
+Note
+====
+--> If we are using * operator with tuple then it is mandatory that one of the 
+argument must of tuple type and second argument must be of integer type.
+
+Membership Operator(in and not in):
+=====================================
+
+tuple1 = (10,20,30,"Java","Python","C","C++")
+print(10 in tuple1) #True 
+print("Python" in tuple1) #True 
+print("C" in tuple1) #True
+print("Java" not in tuple1) #False
+
+
+Identity Operators(is and is not):
+===================================
+--> Tuple will follow the princple of memory utilization.
+
+tuple1 = (10,20,30)
+tuple2 = (40,50,60)
+tuple3 = (10,20,30)
+print(tuple1 is tuple2) #False
+print(tuple2 is tuple3) #False
+print(tuple1 is not tuple3)#False
+print(tuple1 is not tuple2)#True
+print(tuple1 is tuple3)#True
+
+Logical Operator(or and not):
+=============================
+
+x and y --> if x evalutes to False then x will be the answer else  y.
+
+x or y --> if x evalutes to True then x will be the answer else y.
+
+not x --> Reverse 
+
+() --> False
+
+Example of Logical Operators:
+==============================
+
+print(() and (10,20,30))#()
+print((10,20,30) and ()) #()
+print((10,20,30) and (10))#10
+print((10,20) or ()) #(10,20)
+print(() or (10)) #10
+print(not ()) #True 
+print(not (10,20,30)) #False
+
+5.Comparison Operator(<,>,<=,>=,==,!=)
+========================================
+--> Comparison Operator will always compare the Elements of the Line one by one.
+
+Example of Comparison Operator 
+===============================
+
+tuple1 = (10,20,30,40,50)
+tuple2 = (40,50,60,70,80)
+tuple3 = (10,"Python")
+print(tuple1<tuple2) #True
+print(tuple1>tuple2)#False
+print(tuple1>tuples3) #Error
+
+Tuples vs Immutability:
+=======================
+--> Tuples are immutable in Nature that means we cannot perform any changes in 
+    tuple if we are trying to perform any changes in tuple then we will get an error.
+    as tuples elements are fixed.
+
+Example of Immutability in Tuple:
+===================================
+
+tuple1 = (10,20,30,40,50,60)
+tuple1[3] = 500 #Error
+print(tuple1)
+
+List Vs Tuple 
+==============
+
+List                                            Tuple 
+=====================================================================================
+
+--> List is represented by                 --> Tuples are represented by Parenthesis.
+    square Brackets.
+
+--> Lists are Mutable in                   --> Tuples are immutable in Nature.
+    Nature.
+
+--> Lists is Slower than Tuple.            --> Tuple is Faster Than List. 
+
+--> Lists consumes More memory.            --> Tuples Consumes Less Memory.
+
+--> If we want to perform operation        --> Tuples are useful to access the Element.
+    like insertion,deletion and updation
+    then we will use List.
+
+Traversal Over Tuple
+======================
+
+--> Traversal means Visiting(Printing) Each and Every Element of the Tuple.
+
+1st Way
+=======
+By Using Len Function along with range Function(Index Value) 
+==============================================================
+
+tuple1 = ("Java","Python","C++","JavasScript","C","R")
+
+for i in range(len(tuple1)): #range(6) #0,1,2,3,4,5
+    print(tuple1[i])
+
+2nd Way
+=======
+By Using Direct Tuple Datatype
+==============================================================
+
+tuple1 = ["Java","Python","C++","JavasScript","C","R"]
+
+for i in tuple1:
+    print(i)
+
