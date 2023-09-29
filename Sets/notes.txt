@@ -1,0 +1,212 @@
+Sets
+=====
+--> Set is also a collection of Elements.
+--> Set is a unordered collection of elements(Indexing and Slicing is not possible)
+--> Set doesnot allowed duplicates.
+--> Dissimilar objects can be stored in set.
+--> Sets are mutable in Nature.
+--> Curly braces are used to represent  a set.
+--> Mathematical operations(Union,Intersection,Difference) are also performed on sets.
+
+Creation of Set Object 
+=======================
+
+--> Empty Set 
+
+        s = set()
+
+--> If we know the element:
+
+        s = {10,20,30,40,50,60}
+    
+Example of Creation of Set Objects 
+===================================
+
+set1 = {}
+print(type(set1)) #<class dict>
+
+set2 = set()
+print(type(set2))#<class set>
+
+set3 = {10,20,30}
+print(type(set3))#<class set>
+
+
+Insertion Functions of Set
+============================
+
+--> There are Two function that we are using for inserting elements in set.
+
+1.add()
+2.update()
+
+1.Add() Function 
+=================
+--> This Function is used to add a single object into a set.
+
+Syntax:
+
+    set_name.add(data)
+
+Example of Add() Function 
+==========================
+
+set1 = set()
+set1.add(10)
+set1.add("Hi")
+set1.add(10.5)
+print(set1)
+
+2.update() Function 
+===================
+--> This Function is used to add multiple elements from a sequence datatype into a set.
+--> If duplcates are present in the sequence datatype then those duplicates will be 
+    removed.
+
+Syntax:
+
+    set_name.update(sequence_datetype)
+
+Example of Update Function 
+=============================
+set1 = {10,20,30,40,50}
+list1 = [10,20,80,90,60]
+set1.update(list1)
+print(set1)#{80, 50, 20, 90, 40, 10, 60, 30}
+set1.update(("Hi","Hello"))
+print(set1)#{'Hi', 10, 80, 20, 'Hello', 90, 30, 40, 50, 60}
+
+Deletion Functions Over Sets 
+=============================
+--> There are Three Deletion Functions that we can use in case of Set.
+
+1.pop()
+2.remove()
+3.discard()
+
+3.Pop() Function 
+=================
+--> This Function will delete any element from the set.
+--> The Deleted element will be returned with this function.
+
+Syntax:
+
+    set_name.pop()
+
+Example of Pop() Function 
+==========================
+
+set1 = {'Hi', 10, 80, 20, 'Hello', 90, 30, 40, 50, 60}
+print(set1.pop())
+print(set1)
+
+4.Remove() Function 
+====================
+--> This Function is used to delete a particular element from a given set.
+--> If the Given Element is not Present then remove function will raise Key Error.
+
+Syntax:
+
+    set_name.remove()
+
+Example of Remove Function 
+============================
+set1 = {'Hi', 10, 80, 20, 'Hello', 90, 30, 40, 50, 60}
+set1.remove("Hello")
+print(set1)
+set1.remove("Python")# Key Error
+print(set1)
+
+
+
+5.Discard() Function 
+====================
+--> This Function is used to delete a particular element from a given set.
+--> If the Given Element is not Present then discard will not delete any element from the set.
+--> It also not give us any error.
+
+Syntax:
+
+    set_name.discard()
+
+Example of Discard Function 
+============================
+set1 = {'Hi', 10, 80, 20, 'Hello', 90, 30, 40, 50, 60}
+set1.discard("Hello")
+print(set1)
+set1.remove("Python")
+print(set1)
+
+Difference Between Discard and Remove 
+=====================================
+--> If we are using remove to delete a particular element and the element is not 
+    present then remove will raise key error.
+
+--> If we are using discard to delete a particular element and if the element 
+    is not present then discard will not do anything to the given set. 
+
+
+Mathematical Operations Over Sets 
+====================================
+1.Intersection()
+2.Union()
+3.Difference() 
+
+6. Intersection Operation Function
+====================================
+--> Intersection Function will return the Common Element between two sets.
+
+Syntax:
+
+     set_name1.intersection(set_name2)
+
+Example of Intersection Function 
+===================================
+
+s1 = {10,20,30,40,50,60}
+s2 = {70,80,90,100,10,20}
+s3 = {"Java","Python"}
+print(s1.intersection(s2))#{10,20}
+print(s1.intersection(s3))#set() 
+
+7.Union Operation Function 
+==========================
+--> This Function will Return all elements from two sets(duplicates will be removed).
+
+Syntax:
+        set_name1.union(set_name2)
+
+Example of Union Function 
+==========================
+
+s1 = {10,20,30,40,50,60}
+s2 = {70,80,90,100,10,20}
+s3 = {"Java","Python"}
+print(s1,s2,s3)
+print(s1.union(s2))#{10,20,30,40,50,60,70,80,90,100}
+print(s1.union(s3))#{10,20,30,40,50,60,"Java","Python"}
+
+
+8.Difference Function()
+========================
+--> This Function will return the elements which are present in first set but not in 
+    second set.
+
+--> Common Element will be removed and First set Remaining element will be there. 
+
+Syntax:
+
+        set_name1.difference(set_name2)
+
+Example of Difference Function 
+===============================
+
+s1 = {10,20,30,40,50,60}
+s2 = {70,80,90,100,10,20}
+print(s1.difference(s2))#{30,40,50,60}
+print(s2.difference(s1))#{70,80.90,100}
+
+Note:
+====
+--> We cannot use + and * Operator in case of Set.
+

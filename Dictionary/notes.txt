@@ -1,0 +1,361 @@
+Dictionary 
+==========
+--> Dictionaries are also the Collections of Elements in the form of Keys and Values.
+
+Example:
+=========
+Name:"Pratyush"
+Batch:"DS010923"
+College:"Edyoda Digital University"
+Mob_Number:9876543210
+
+Properties of a Dictionaries:
+===============================
+
+--> Keys cannot be Duplicate, It must be Unique(If we are giving Duplicate keys then 
+    old value will be replaced with new one)
+
+--> Disimilar objects are allowed in case of Dictionary.
+
+--> Dictionary is a unordered collection of Elements(Indexing concept is not Applicable).
+
+--> Dictionaries are Mutable in Nature(We can change Values of a Dictionaries).
+
+--> Mutable Objects(List,Dictionary,Set) cannot be used as a keys in Dictionaries.
+
+--> Curly Braces are used to Represent a Dictionary.
+
+
+Creation of Dictionary Objects
+=================================
+
+--> Empty Dictionary
+
+    d = {}
+    d = dict()
+
+--> If we know the Elements
+
+    d = {"name":"Pratyush","Batch":"Edyoda Digital University"}
+
+Example of Creation of Dictionary
+==================================
+
+d = {}
+print(type(d))
+
+d=dict()
+print(type(d))
+
+d = {"name":"Pratyush","Batch":"Edyoda Digital University"}
+print(type(d))
+
+
+How to add entry(Key-Value Pair) in dictionary
+==================================================
+
+Syntax:
+========
+
+        dictionary_name[key] = Value
+
+Example of Adding an Element in Dictionary
+============================================
+
+d = {}
+d["Employee Number"] = 100
+d["Empoloyee Name"] = "Ansh Srivastava"
+d["Employee Location"] = "Hyderabad"
+print(d)
+
+
+How to Access an Element of a Dictionary
+=========================================
+
+--> If the key is not present then we will get key Error.
+
+Syntax:
+========
+
+     dictionary_name[key]
+
+
+Example of Accessing an Element in Dictionary
+=============================================
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d['Empoloyee Name'])#Ansh Srivastava 
+print(d['Employee Number'])#100
+print(d[10])# Key Error
+
+How to update an Element of a Dictionary
+==========================================
+
+Syntax:
+
+    dictionary_name[key] = updated_value
+
+Example of Update the Value of a dictionary
+=============================================
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d)
+d['Empoloyee Name'] = "Pratyush Srivastava"
+d['Employee Number'] = 250
+print(d)
+
+How to Delete Key Value Pair/Complete Dictionary 
+================================================= 
+
+--> If we want to a key value pair from a dictionary the we need to del keyword.
+
+Syntax:
+=======
+ 
+        del dictionary_name[key]
+
+Example of Deletion of a Key Value Pair
+========================================
+
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d)
+del d['Employee Number']
+print(d)
+
+--> If we want to delete complete dictionary then also we need to del keyword.
+
+Syntax:
+
+        del dictionary_name
+
+Example of Deletion of Complete Dictionary
+===========================================
+
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d)
+del d
+print(d) #Error
+
+Bulitin Functions of Dictionaries
+==================================
+
+1.len() Functions 
+===================
+--> This function is used to return the Number of key value pairs present in the dictionary.
+
+Syntax:
+
+        len(dictionary_name)
+
+Example of Len() Function 
+============================
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(len(d))
+
+2.clear() Function
+====================
+
+--> This Function is used to delete all key value pairs from a dictionary.
+
+Syntax:
+
+    dictionary_name.clear()
+
+Example of Clear() Function
+=============================
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d)
+d.clear()
+print(d)
+
+
+3.pop() Function
+=================
+
+--> This Function is used to Delete a Particular key value pair from a dictionary.
+
+--> This function will also return the Deleted Value.
+
+--> Pop Function will return an error if the dictionary is empty or the given key 
+    is not present in your dictionary
+
+Syntax:
+
+        dictionary_name.pop(key)
+
+
+Example of Pop() Function 
+===========================
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d.pop('Employee Number'))#100
+print(d)
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d.pop('Employee Salary'))#Error
+print(d)
+
+d = {}
+print(d.pop('Employee Salary'))#Error
+print(d)
+
+4.popitem Function 
+====================
+
+--> This function will delete the last key value pair of the dictionary.
+
+--> This Function will also return the deleted key value pair.
+
+--> Pop Function will return an error if the dictionary is empty then python 
+    will raise an error.
+
+Example of PopItem() Function 
+==============================
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d)
+print(d.popitem())#('Employee Location','Hyderabad')
+print(d)
+
+
+d = {}
+print(d)
+print(d.popitem())#Error
+
+
+5.Get() Function 
+=================
+--> This Function is used to access an Element from a dictionary.
+--> If the given Key is not present then Get() Function will not raise any 
+    error get function will return None as an Answer.
+
+Syntax:
+
+    dictionary_name.get(key)
+
+Example of Get() Function 
+==========================
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d.get('Employee Number'))#100
+print(d.get('Empoloyee Name'))#Ansh Srivastava 
+print(d.get('Employee Salary')) #None
+
+Example of Accessing Operator 
+=============================
+
+d = {'Employee Number': 100, 'Empoloyee Name': 'Ansh Srivastava', 'Employee Location': 'Hyderabad'}
+print(d['Employee Number'])#100
+print(d['Empoloyee Name'])#Ansh Srivastava 
+print(d['Employee Salary']) #Error
+
+6.update() Function 
+====================
+--> This function is used to add two Dictionaries Together.
+
+Syntax:
+
+        first_dict.update(second_dict)
+
+Example of update() Function 
+==============================
+
+d1 = {"name":"Ayush","Class":"12th","Roll No":56,"Address":"Delhi"}
+d2 = {"Grade":"A","Rank":'5th',"IsTopper":False}
+d1.update()
+print(d1)#{'name': 'Ayush', 'Class': '12th', 'Roll No': 56, 'Address': 'Delhi', 'Grade': 'A', 'Rank': '5th', 'IsTopper': False}
+
+Iterations Over a Dictionaries 
+===============================
+
+--> If we are iterating over a dictionary directly then only keys will be accessible.
+
+d = {'name': 'Ayush', 'Class': '12th', 'Roll No': 56, 'Address': 'Delhi', 'Grade': 'A', 'Rank': '5th', 'IsTopper': False}
+for i in d:
+    print(i)
+
+Iterations Functions Over a Dictionaries 
+==========================================
+--> There are Three Function for Iterating over a Dictionary:
+
+1.keys()
+2.values()
+3.items()
+
+7.keys() Function 
+==================
+--> This Function is used to return all the keys from a dictionary.
+
+Syntax:
+
+    dictionary_name.keys()  #--> All the keys from a dictionary
+
+Example of Keys() Function 
+===========================
+
+d = {'name': 'Ayush', 'Class': '12th', 'Roll No': 56, 'Address': 'Delhi', 'Grade': 'A', 'Rank': '5th', 'IsTopper': False}
+print(d.keys())#dict_keys(['name','Class','Roll No','Address','Grade','IsTopper'])
+for i in d.keys(): #
+    print(i)
+
+8.values() Function 
+==================
+--> This Function is used to return all the values from a dictionary.
+
+Syntax:
+
+    dictionary_name.values()  #--> All the values from a dictionary
+
+Example of Values() Function 
+===========================
+
+d = {'name': 'Ayush', 'Class': '12th', 'Roll No': 56, 'Address': 'Delhi', 'Grade': 'A', 'Rank': '5th', 'IsTopper': False}
+print(d.values())#dict_values(['Ayush', '12th', 56, 'Delhi', 'A', '5th', False])
+for i in d.values():
+    print(i)
+
+9.items() Function 
+===================
+--> This Function is used to return keys as well as values from a dictionary.
+--> This Function will return tuple inside a list.
+Syntax:
+
+    dictionary_name.items()
+
+Example of Items() Function 
+=============================
+d = {'name': 'Ayush', 'Class': '12th', 'Roll No': 56, 'Address': 'Delhi', 'Grade': 'A', 'Rank': '5th', 'IsTopper': False}
+print(d.items())#dict_items([('name', 'Ayush'), ('Class', '12th'), ('Roll No', 56), ('Address', 'Delhi'), ('Grade', 'A'), ('Rank', '5th'), ('IsTopper', False)])
+for key,values in d.items():
+    print(key,values)
+
+Dictionary vs Mutability.
+==========================
+
+--> Dictionaries are Mutable in Nature that means we can perform any changes in the 
+    dictionary.
+
+Example of Mutability in case of Dictionary.
+==============================================
+d = {'name': 'Ayush', 'Class': '12th', 'Roll No': 56, 'Address': 'Delhi', 'Grade': 'A', 'Rank': '5th', 'IsTopper': False}
+print(d,id(d))
+d['name'] = "Ravi"
+d['Address'] = "Noida"
+d['Class'] = 'Graduation'
+print(d,id(d))
+
+Operators Used in Dictionary:
+===============================
+--> We cannot use Operators with Dictionary.
+
+Example of Operators with Dictionary:
+======================================
+d1 = {10:20,30:40}
+d2 = {50:60,70:80}
+print(d1+d2)
+print(d1*d2)
+
+
