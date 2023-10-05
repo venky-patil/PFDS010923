@@ -1,0 +1,710 @@
+Two Requirements are There:
+1000 Requirements --> Sum of Two Numbers
+
+Find the Sum of 10 and 20.
+===========================
+a=10
+b=20
+c=a+b
+print(c)
+
+Find the Sum of 100 and 200
+============================
+a=100
+b=200
+c=a+b
+print(c)
+
+Find the Sum of 1000 and 2399
+============================
+a=1000
+b=2399
+c=a+b
+print(c)
+
+def add(a,b):
+    return a+b
+print(add(100,200))
+print(add(1000,2000))
+print(add(1000,2399))
+
+Advantages of Using Functions:
+
+Code Reusability.
+
+Functions
+==========
+
+--> Function is a block of Code that is used to perform a specific task based on 
+    our business logic.
+
+
+Types of Function 
+==================
+
+1.Predefined(Inbuilt) Function 
+================================
+
+--> The Functions that are already defined by the Python Virtual Machine ,we as a programmmer 
+    need not to declare or define the functionalities of those Functions.We can 
+    directly Use Predefined Function.
+
+Examples
+----------
+
+id()   --> To Get Memory Location of an Object 
+print()--> To Display the Output on the Console
+len()  --> To Get Number of Elements/Character of Sequence Datatype 
+type() --> To Get the Type of an Object 
+sum()  --> To Get the Sum of all the Elements of a List,Set,Tuple.
+max()  --> To Get the Maximum Value of a Sequence
+min()  --> To Get the Minimum Value of a Sequence.
+
+# Examples of Predefined Functions 
+# =======================================
+
+# id()   --> To Get Memory Location of an Object 
+# ======================================================
+
+x = 10
+print(id(x))
+
+# print()--> To Display the Output on the Console
+#=========================================================
+x = 10
+print(x)
+
+
+# len()  --> To Get Number of Elements/Character of Sequence Datatype 
+#==========================================================================
+
+x = [10,20,30,40]
+print(len(x))
+
+
+# type() --> To Get the Type of an Object 
+#==============================================
+
+x = [10,20,30,40]
+print(len(x))
+
+# sum()  --> To Get the Sum of all the Elements of a List,Set,Tuple.
+#=====================================================================
+
+x = [10,20,30,40]
+print(sum(x))
+
+# max()  --> To Get the Maximum Value of a Sequence
+#====================================================
+
+x = [10,20,30,40]
+print(max(x))
+
+# min()  --> To Get the Minimum Value of a Sequence.
+#======================================================
+
+x = [10,20,30,40]
+print(min(x))
+
+
+2.UserDefined Function
+=======================
+
+--> The Functions which are created by the programmer as per the business Requirements
+    such type of Functions are known as serDefined Function.
+
+--> Each and Every User Defined Function need to be declared and Defined by the 
+    programmer.
+
+Example of User Defined Function 
+==================================
+
+subtraction()
+Calculator(a,b)
+
+Syntax for Creating User Defined Functions 
+============================================
+
+--> For Defining any UserDefined Function we need to use def keyword.
+
+Syntax:
+=======
+
+def function_name(parameterlist):
+    business_logic 
+    return None
+
+Parameters 
+===========
+--> Parameters are the inputs for the Functions based on that parameter only 
+    function will execute its business logic.
+
+--> if we are giving any parameter while declaring a function then it is mandatory 
+    to pass same number of paramaters while calling that function.
+
+Return Keyword 
+===============
+
+--> Function will take inputs in the form of parameters and whatever business 
+    logic is mentioned in the function will be applied on the paramater after 
+    applying the business logic on the given parameters function will give 
+    some output that output will be given with the help of return statement.
+
+--> return statement is optional but we are not giving return statement then 
+    python will consider None as an output for that Function that means  None 
+    will be returned from that Function.
+
+--> We can also return Multiple things as an output of a function those outputs 
+    will be considered as a tuple.
+
+--> Return Statement is the last part of any Function that means after encountering 
+    return statement in a function no any statement will be executed as return means 
+    end of the Function.
+
+
+Example of User Defined Functions - 1
+=======================================
+
+def Subtraction(a,b):  #Function Declaration
+    result = a-b       #Function Definition
+    return result
+
+print(Subtraction(10,20))  #Function Calling
+
+
+Example of User Defined Functions - 2
+=======================================
+
+def Subtraction(a,b,c):  #Function Declaration
+    result = a-b       #Function Definition
+    print(result) 
+
+print(Subtraction(10,20))  #Function Calling
+
+
+Types of Parameters
+=====================
+--> Two Types of Parameters:
+
+1.Actual Parameters 
+===================
+
+--> The Parameters that we are passing while calling the functions such type of 
+    parameters are known as Actual Parameters.
+
+
+2.Formal Parameters 
+=====================
+
+--> The Parameters that we are passing while declaring the functions such type of 
+    parameters are known as Formal Parameters.
+
+
+Example of User Defined Functions - 3
+=======================================
+
+def Calculator(a,b): #a,b are Formal Parameter
+    add = a+b 
+    sub = a-b 
+    div = a/b 
+    fdiv = a//b 
+    mod = a%b 
+    return add,sub,div,fdiv,mod #Internally Python will pack all these things as a Tuple Elements
+
+print(Calculator(20,10)) #20,10 Actual Parameter
+
+
+Example of User Defined Functions - 4
+=======================================
+
+def factorial(n):
+    fact=1
+    for i in range(1,n+1):
+        fact=fact*i 
+    return fact
+    return "Hi"
+    print("Hi")
+    print("Hello")
+    
+print(factorial(5))
+
+
+Argument Passing Techniques
+============================
+
+1.Positional Argument 
+2.Keyword Argument 
+3.Default Argument 
+4.Variable Length Arguments 
+
+
+1.Positional Argument 
+=======================
+
+--> The Actual Arguments are passed with the respect to the order or position 
+    of the arguments.
+
+Example of Positional Arguments 
+=================================
+
+def add(a,b,c,d):
+    return a,b,c,d,a+b+c+d  #(10,20,30,40,100)
+
+print(add(10,20,30,40))
+
+
+# Example of Positional Arguments-2
+# ==================================
+
+def add(a,d,c,b):
+    return a,b,c,d,a+b+c+d  #(10,40,30,20,100)
+
+print(add(10,20,30,40))
+
+2.Keyword Argument 
+====================
+
+--> While calling the function if we are declaring the value of each variable manually 
+    then such type of arguments are known as Keyword Argument.
+
+Example of Keyword Argument 
+=============================
+
+def Interest(p,r,t):
+    print("Principle is",p)
+    print("Rate is",r)
+    print("Time  is",t)
+    SI = (p*r*t)//10
+    return SI
+
+print(Interest(r=2,t=4,p=1000))
+
+3.Default Argument 
+====================
+
+--> Sometimes there is a business Requirements where we need to consider some 
+    default values for a Function Argument such type of values are known as default Value.
+
+-->  If we are giving value for default argument while calling the function 
+     then that value will be considered else if we are not giving value 
+     while calling the function then the default value which has given by 
+     the programmer while declaring the function will be considered.
+
+Example of Default Argument:
+=============================
+
+def create_bank_account(name,aadharno,mob,balance=0):
+    print("Customer Name :",name)
+    print("Aadhar No :",aadharno)
+    print("Mobile No :",mob)
+    print("Customer Balance :",balance)
+    return ""
+
+print(create_bank_account("Pratyush",987654321,98765432,100)) 
+print(create_bank_account("Ansh",987654300,98765432))
+
+4.Variable Length Arguments 
+============================
+
+--> With the help of Variable length argument we can all functions with any 
+    number of arguments. 
+
+There are Two Types of Variable Length Argument.
+
+1.*Args
+2.**Kargs
+
+
+*Args 
+=====
+--> This Argument passing technique will work only with positional argument.
+--> If we giving *args while declaring a function then that function will be
+    called  by using any number of Argument.
+
+--> Internally Python will consider tuple as a part of all the argument which are   
+    passed while declaring that function .
+
+
+Example of *args 
+==================
+
+def sum(*n):    
+    print(type(n), n)
+    temp = 0
+    for i in n:
+        temp=temp+i 
+    return temp
+
+print(sum())
+print(sum(10))
+print(sum(10,20))
+print(sum(10,20,30))
+print(sum(10,20,30,40))
+   
+
+
+
+**Args 
+=====
+--> This Argument passing technique will work only with keyword argument.
+--> If we giving **args while declaring a function then that function will be
+    called  by using any number of Argument.
+
+--> Internally Python will consider dictionary as a part of all the argument which are   
+    passed while declaring that function .
+
+
+Example of **args 
+==================
+
+def sum(**n):    
+    print(type(n), n)
+    return Dictionary Found
+
+print(sum(x=10))
+print(sum(y=10))
+print(sum(z=10,a=20))
+print(sum(b=10,c=20,d=30))
+print(sum(f=10,g=20,h=30,k=40))
+   
+
+
+Types of Variables 
+====================
+
+--> There are Two Types of Variables are There :
+
+1.Global Variables 
+2.Local Variables
+
+Global Variables 
+=================
+
+--> The Variables which are declared outside any Function are known as Global 
+    Variables.
+
+Example of Global Variable 
+=============================
+
+pi = 22/7  #Global Variable
+def area_of_circle(radius):
+    return pi*radius**2
+
+print(area_of_circle(10))
+
+Local Variables 
+=================
+
+--> The Variables which are declared insside any Function are known as Local
+    Variables.
+
+Example of Local Variable 
+=============================
+
+def perimeter_of_circle(radius):
+    pi = 22/7                         #local Variable
+    return pi*radius**2
+
+print(perimeter_of_circle(10))
+
+Scopes of the Variables 
+=======================
+
+Two Types of Scopes/Variables are There 
+
+1.Global Scope 
+==============
+
+--> Global variables are present in Global Scope that means we can access global variable 
+    from anywhere in the program(Either Inside any Function or Outside).
+
+Example of Global Scope 
+=========================
+
+a=10
+b=20 
+def check(c,d):
+    print(a,b,c,d)
+    return "Global Scope Checked"
+
+print(check(100,200))
+print(a,b)
+
+
+2.Local Scope
+=============
+
+--> Local variables are present in Local Scope that means we can access local variable 
+    only within that block of code(Function).
+
+--> Local variables cannot be accessed outside the Function.
+
+
+# Example of Local Scope
+# ========================
+
+x=10 #Global
+y=20 #Global 
+
+def trim():
+    z=99   #Local
+    d=198  #Local
+    print(x)
+    print(y)
+    print(z)
+    print(d)
+    return ""
+print(trim())
+print(d)
+print(z)
+
+
+Priority of the Variables/Scopes 
+===================================
+
+--> if the name of local and global variable both are same then which variable 
+    will be considered will be determined with the help of Priority of  the 
+    variables. 
+
+---> if local and global variables names are same then if we are trying to access 
+     the variable within that function then PVM will first check weather 
+     the variable with same name is present in local scope or not if the variable 
+     is present in local scope then that variable will be considered else 
+     pvm will check the variable in global scope and if the variable 
+     is not present in global scope as well then we will get Name Error. 
+
+--> First Check --> Local Scope -----> Global Scope  ---> Name Error
+
+Example of Priority of Variables 
+================================
+
+a = 10
+b = 20 
+c = 30
+def dummy():
+    a=100
+    b=200
+    print(a)
+    print(b)
+    print(c)
+    return ""
+
+print(dummy())
+print(a)
+print(b)   
+
+Global Keyword 
+===============
+
+--> This Keyword is used to make a variable as global within a Function.
+
+--> Global keyword must be the first statement of the function.We cannot use global 
+    statement after any other statement.
+
+Examples of Global Keyword  - 1 
+================================
+
+az=10 
+def f1():
+    print(az)
+    return ""
+
+def f2():
+    global az
+    az=777
+    print(az)
+    return ""
+
+print(f2())
+print(az)
+
+
+Examples of Global Keyword  - 2
+================================
+
+az=10 
+def f1():
+    print(az)
+    return ""
+
+def f2():
+    global az
+    az=777
+    print(az)
+    return ""
+
+print(f1())
+print(az)
+
+
+Examples of Global Keyword  - 3
+================================
+
+abc=999 
+def f1():
+    print(abc+100)
+    return ""
+
+def f2():
+    global abc
+    abc=900
+    print(abc+800)
+    return ""
+
+def f3():
+    print(abc)
+    return "" 
+
+print(f1()) #1099
+print(f3())#999
+
+
+
+Examples of Global Keyword  - 4
+================================
+
+abc=999 
+def f1():
+    print(abc+100)
+    return ""
+
+def f2():
+    global abc
+    abc=900
+    print(abc+800)
+    return ""
+
+def f3():
+    print(abc)
+    return "" 
+
+print(f1()) 
+print(f2())
+print(f3())
+
+
+
+
+Examples of Global Keyword  - 5
+================================
+
+abc=999 
+def f1():
+    print(abc+100)
+    return ""
+
+def f2():
+    print(abc)
+    global abc 
+    abc=900
+    print(abc+800)
+    return ""
+
+def f3():
+    print(abc)
+    return "" 
+
+print(f1()) 
+print(f2())
+print(f3())
+
+
+Nested Functions.
+=================
+
+--> Nested Functions are also possible in Python.
+--> Function Inside Function is known as Nested Function.
+--> In Case of Nested Function First Inner Function will be executed then outer Function.
+--> Function will never be executed until we call it.
+--> We cannot call Inner Function Directly.
+--> Inner Functions are also local to the Outer Function.
+
+Example of Nested Functions  -1 
+================================
+
+def add(x,y):
+    def sub(x,y):
+        return x-y 
+    return x+y,sub(x,y)
+
+print(add(10,20))
+
+Example of Nested Functions - 2 
+================================
+
+def outer():
+    print("Inside Outer Function")
+    def inner():
+        retun "Inside Inner Function"
+    return "Outer Function Executed" 
+
+print(outer())
+
+Example of Nested Functions - 3
+================================
+
+def outer():
+    print("Inside Outer Function")
+    def inner():
+        return "Inside Inner Function"
+        print("Inner Function")
+    return "Outer Function Executed",inner()
+
+print(outer())
+
+# Example of Nested Functions - 4
+# ================================
+
+def outer():
+    print("Inside Outer Function")
+    def inner():
+        return "Inside Inner Function"
+        print("Inner Function")
+    return "Outer Function Executed",inner()
+
+outer()
+
+
+Example of Nested Functions - 5
+================================
+
+def outer(a,b):
+    def inner(c,d):
+        return c-d+a+b
+        print("Inner Function")
+    return 100,inner(10,20)
+
+print(outer(5,15))
+
+Example of Nested Functions - 6
+================================
+
+def outer(*a):
+    def inner(c,d):
+        return c-d+a
+        print("Inner Function")
+    return 100,inner(10,20)
+
+print(outer(5,15))
+
+#Example of Nested Functions -7
+#================================
+
+def outer():
+    inner()
+    print("Inside Outer Function")
+    def inner():
+        print("Inside Inner Function")
+        return "Inner Executed"
+    return ("Outer Function Executed")
+
+outer()
+    
+        
+
+Recursion
+=========
+--> The process of calling a function by itself is known as Recursion and The Functions 
+    which are involve in this process are known as Recursive Function.
+
+
