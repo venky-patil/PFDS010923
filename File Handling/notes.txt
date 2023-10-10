@@ -1,0 +1,435 @@
+File Handling 
+=============
+
+--> It is just a concept by which we can perform different operation over a file.
+--> File handling is used for Storing the Data.
+
+
+Operation --> Read , Write , Append
+
+Database --> Large amount of Data
+
+--> 10 Students --> Configuration,SQL Queries(Create,Inserting) and User,amount --> Files
+--> 10 Million
+
+10 --> Students Information in your excel
+
+--> If we want to store less amount of data then we can prefer files.
+
+--> If we are having large amount of data then we can prefer database.
+10 Million 
+
+files --> .csv,.txt,.json
+
+
+Types of Files:
+
+1.text files --> text --> .txt,.csv,.json 
+
+2.binary files --> mp3,images,videos,audio
+
+Opening a File 
+===============
+
+--> Before performing any operation over a file First step will always 
+    be always be Open that Particular File.
+
+Syntax in Python to Open a File 
+=================================
+
+        f = open('file_name','mode')
+
+f is known as File Pointer.
+
+
+Types of Modes(Operations):
+===========================
+
+1. r  --> open existing file for read operation.
+2. w  --> open the file for writing operation 
+3. a  --> open the file for appending operation 
+4. r+ --> For reading and Writing Operation 
+5. w+ --> For Writing and Reading Operation.
+
+
+Closing the File 
+=================
+
+--> After performing operation over a file the last step of file handling 
+    is to close that file.
+
+Syntax for Closing a File 
+===========================
+
+                f.close()
+
+w Mode(Write Operation)
+==========================
+
+--> For Performing writing operation in text file we are having Two Functions.
+
+1. write(str) --> It will take data in the form of string.
+
+2. writelines(list) --> It will take data in the form of list.
+
+Important Note:
+================
+
+--> If the File which is mentioned along with open function is not present then 
+    a new File will be created with that particular name.
+
+--> If the file is already present and that file consist of any data then the old 
+    data will be overwritten with new Data.
+
+Example of write(str) Function - 1
+====================================
+
+f = open('akshay.txt','w')
+f.write('Vinay is a Good Boy and He knows C/C++ Programming very well')
+f.write('Ajay')
+f.write('Virat')
+f.write('Rohit')
+f.close()
+
+
+
+Example of write(str) Function - 2
+====================================
+
+f = open('vinay.txt','w')
+f.write('Vinay is a Good Boy and He knows C/C++ Programming very well\n')
+f.write('Ajay\n')
+f.write('Virat\n')
+f.write('Rohit\n')
+f.close()
+
+
+Example of write(str) Function - 3
+====================================
+
+f = open('vinay.txt','w')
+f.write('Python is a High Level Programming Langauge\n')
+f.write('Java is also high level programming langauge but syntax is little bit tricky\n')
+f.write('C/C++ is a middle level langauge\n')
+f.write('Javascript is used for web development\n')
+f.close()
+
+
+Example of writelines(list) Function - 4
+==========================================
+
+f = open('Ashu.txt','w')
+f.writelines(['Vinay is a Good Boy and He knows C/C++ Programming very well','Ajay','Vijay','Manish','Rajeev'])
+f.close()
+
+Example of writelines(list) Function - 5
+==========================================
+
+f = open('Vijay.txt','w')
+f.writelines(['Vinay is a Good Boy and He knows C/C++ Programming very well\n','Ajay\n','Vijay\n','Manish\n','Rajeev\n'])
+f.close()
+
+r Mode (Read Operations)
+==========================
+
+--> For Reading any data from a file Python is having Four Different type of Functions.
+
+1. read() -->  Read whole data from a file
+2. read(n) --> Read N Character from a File.
+3. readline() --> Read A Single Line From a File.
+4. readlines() --> Read all Lines from a file in the Form of List.
+
+
+Important Note:
+================
+--> In Case of Read Mode if the given file is not present then Python 
+    will raise an error "FileNotFound Error".
+
+Example of Read Operation 
+==========================
+
+f = open('Jai.txt','r')
+f.read()
+f.close()
+
+Example of read() Function - 1
+=============================
+
+f = open('akshay.txt','r') 
+print(f.read())
+f.close()
+
+
+Example of read(n) Function - 2
+================================
+
+f = open('akshay.txt','r') 
+print(f.read(7))
+f.close()
+
+
+Example of read(n) Function - 3
+================================
+
+f = open('akshay.txt','r') 
+print(f.read(15))
+f.close()
+
+
+
+Example of readline() Function - 4
+===================================
+
+f = open('Vijay.txt','r') 
+print(f.readline())
+f.close()
+
+
+
+# Example of readlines() Function - 5
+# ===================================
+
+f = open('Vijay.txt','r') 
+print(f.readlines())
+f.close()
+
+
+# Example of Read Operation - 1
+#=================================
+f = open('akshay.txt') #Default mode will be r mode.
+f.readline() #Vinay
+f.read(3)#Aja
+f.readline()#y
+f.read(4)#Vira
+f.read()#t \nRohit\n
+f.readlines()
+f.close()
+
+
+a Mode(Append Operation)
+==========================
+
+--> If we want to add the data from the last point of the file then we will use 
+    append mode.
+
+--> For appending any File in Python we are having two functions :
+
+1. write(str) --> It will take data in the form of string.
+
+2. writelines(list) --> It will take data in the form of list.
+
+Important Note:
+================
+
+--> If the File which is mentioned along with open function is not present then 
+    a new File will be created with that particular name in append mode.
+
+--> If the file is already present and that file consist of any data then the new data 
+    will be added at the last position.
+
+Example of write(str) Function - 1
+====================================
+
+f = open('Vijay.txt','a')
+f.write('Vinay is a Good Boy and He knows C/C++ Programming very well')
+f.write('Ajay')
+f.write('Virat')
+f.write('Rohit')
+f.close()
+
+
+
+Example of write(str) Function - 2
+====================================
+
+f = open('vinay.txt','w')
+f.write('Vinay is a Good Boy and He knows C/C++ Programming very well\n')
+f.write('Ajay\n')
+f.write('Virat\n')
+f.write('Rohit\n')
+f.close()
+
+
+Example of writelines(list) Function - 4
+==========================================
+
+f = open('Ashu.txt','a')
+f.writelines(['Vinay is a Good Boy and He knows C/C++ Programming very well','Ajay','Vijay','Manish','Rajeev'])
+f.close()
+
+
+# Important Note 
+# ===============
+
+# Both W mode and A append Mode are same the Only difference in these two 
+# modes are w mode will start writing data from the first position whereas 
+# append mode will add data from the last position.
+
+r+ Mode 
+========
+
+--> Read First and Then Write.
+
+Example of r+ Mode 
+===================
+
+f = open('Ashu.txt','r+')
+print(f.read())
+f.write('Hi\n')
+f.write('Hello\n')
+f.close()
+
+
+
+w+ Mode 
+========
+
+-->Write First and then Read
+
+Example of w+ Mode 
+===================
+
+f = open('Jai.txt','w+')
+f.write('Hi\n')
+f.write('Hello\n')
+print(f.read())
+f.close()
+
+Example of w+ Mode 
+===================
+
+f = open('Jai.txt','w+')
+
+f.writelines(['Smith\n','Johnson\n','Williams\n','Brown\n','Jones\n','Miller\n','Davis\n','Garcia\n','Rodriguez\n'])
+print(f.read())
+f.close()
+
+
+How we can check weather a File is Closed or not.
+=================================================
+
+--> For checking weather a file is open or closed then for that we are having 
+    variable.
+
+Syntax:
+
+            f.closed   #True --> File is closed  else False --> File is open
+
+
+Example of f.closed Attribute
+=================================
+
+f = open('Ajay.txt','w')
+f.write('Hi\n')
+f.write('Bye\n')
+f.write('Hello\n')
+print(f.closed) #False
+f.close()
+print(f.closed) #True
+
+With Keyword 
+=============
+
+--> If we don't want to close our file manually in such cases we will use 
+    with keyword.
+
+--> with keyword --> automaticaully closed the File.
+
+--> For checking weather a file is open or not.
+
+        f.closed #True if file is closed else it will return False.
+
+
+Syntax:
+
+        with open('file_name','mode') as f:
+
+                Statement/Block 
+        
+        #File will automaticaully closed
+
+Example of With Keyword 
+=========================
+
+with open('Srivastava.txt','w') as f:
+    f.write('Java is high Level Programming Language\n')
+    f.write('Python is also high level programming langauge\n')
+    print('File is closed or not',f.closed) #False
+
+print('File is closed or not',f.closed) #True
+
+Two important Functions in File Handling 
+==========================================
+
+1.tell() Function 
+2.seek() Function 
+
+
+tell Function 
+=============
+--> This Function is used to return the current position of file pointer.
+
+Syntax:
+
+    f.tell() #Current position of file pointer 
+
+Example of tell Function 
+==========================
+
+with open('hardik.txt','w') as f:
+    f.write('Shubhman Gill is having Dengue')
+    f.write(' So He will not able to play with Afghanisation on 11 February 2023')
+
+with open('hardik.txt','r') as f:
+    print(f.tell())
+    print(f.read(5))
+    print(f.tell())
+    print(f.read(10))
+
+
+with open('hardik.txt','r') as f:
+    print(f.read(3))
+    print(f.tell())
+    print(f.read(5))
+    print(f.tell())
+    print(f.read(20))
+    print(f.tell())
+
+
+seek(n) Function 
+=================
+
+--> This Function is used to change the current position of the file pointer.
+
+Syntax:
+
+        f.seek(n) 
+
+
+Example of Seek(n) Function
+==============================
+
+with open('hardik.txt','r') as f:
+    print(f.read(3)) #Shu
+    print(f.tell())#3
+    print(f.read(5))#bhman
+    print(f.tell())#8
+    f.seek(15)
+    f.tell() #15
+    print(read(5))
+
+
+with open('hardik.txt','r') as f:
+    print(f.read(10))
+    print(f.tell())
+    f.seek(20)
+    print(f.tell())
+    print(f.read(10))
+    
+with open('hardik.txt','r') as f:
+    print(f.read(8))
+    print(f.tell())
+    f.seek(15)
+    print(f.tell())
+    print(f.read(5))
+

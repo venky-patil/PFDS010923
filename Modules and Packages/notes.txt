@@ -1,0 +1,386 @@
+Modules 
+========
+
+--> Module is nothing but a Collection of Functions and Variables.
+--> Each and Every File with .py Extension is nothing but a Module.
+--> The Advantages of Modules and Packages is Code Reusability(We can Create One module 
+    for a Particular Function/User and We can use that Module for any other Application).
+
+Types of Modules in Python 
+============================
+
+--> There are Two Types of Modules are There:
+
+1.Predefined(Inbuilt) Modules 
+=====================
+--> The Modules which are already implemented In python are known as Predefined 
+    Module.That means we as a programmer no need to implement those modules 
+    we will simply import that module and use it.
+
+Example:
+========
+
+math Module
+os module 
+random module ....
+
+
+2.User Defined Modules
+=======================
+
+--> The modules which are implemented by the Programmer as per the business requirement 
+    then such type of modules are known as User Defined Modules.
+
+Example:
+========
+ 
+calculator module.
+palindrome module
+
+About Import Module 
+=====================
+
+--> If we want to import any python module(or file) into our current file then 
+    we need to use import keyword.
+
+--> import keyword is used to provide the code form some other module to our 
+    current python module.
+
+--> Import in Python is very important for a Real Time Project.
+
+Syntax:
+=======
+
+        import module_name
+
+
+Syntax for Calling any Function/Variable from a Module:
+
+
+        module_name.function_name()/variable
+
+
+Few Inbuilt Modules 
+====================
+
+Math Module 
+============
+
+--> This Module consist of all the functions and variables which are related to 
+    math.
+
+
+help() Function 
+=================
+--> This Function is used to provide a description of any module.
+
+Example of Math Module 
+=======================
+
+import math 
+#print(help(math))
+print(math.factorial(5))#120
+print(math.sqrt(144))#12
+print(math.sin(200))
+print(math.tanh(200))
+print(math.ceil(5.4))#6
+print(math.floor(6.5))#6
+print(math.pi)
+print(math.e)
+print(math.tau)
+
+Random Module 
+==============
+--> In Random Module There are three Functions which are very important/
+
+1.random.random()
+2.random.randint()
+3.random.uniform()
+
+
+random.random()
+================
+
+--> This Function is used to generate a Random Number between 0 and 1.
+
+Example of random.random()
+=============================
+
+import random
+print(random.random())
+
+Generate 10 random Numbers between 0 to 1
+===========================================
+for i in range(10):
+    print(random.random())
+
+
+
+random.randint()
+================
+
+--> This Function is used to generate a Random Number between Two Number.
+--> This Function always generate an integer value.
+
+Example of random.randint()
+=============================
+
+import random
+print(random.randint(10,100))
+
+Generate 10 random Numbers between 999 to 9999
+=============================================
+
+for i in range(10):
+    print(random.randint(999,9999))
+
+
+random.uniform() 
+===============
+
+--> This Function is used to generate a Random Number between Two Number.
+--> This Function always generate an floating point value.
+
+Example of random.uniform()
+=============================
+
+import random
+print(random.uniform(10,100))
+
+Generate 10 random Numbers between 999 to 9999 in form of Floating Point  Number 
+======================================================================================
+
+for i in range(10):
+    print(random.uniform(999,9999))
+
+
+
+
+How to Create User Defined Module 
+===================================
+
+--> Create any Python File(Functions/Variables/Classes) with .py Extension in Same Directory.
+
+--> After Creating Python File(Module) open a new Python File/Notebook and import 
+    the previous implemented python File. 
+
+--> After Importing whatever functions/variables/classes are present in previous 
+    file is now available in your current python file.
+
+--> So Module is imported and Now We can use all the function of the previous 
+    python file into current file.
+
+# Example of User Defined Module 
+# ===================================
+
+import calculator
+#print(help(calculator))
+print(calculator.add(10,20))
+print(calculator.subtraction(10,20))
+print(calculator.multiplication(10,20))
+print(calculator.division(10,20))
+print(calculator.floor_division(10,20))
+print(calculator.name)
+print(calculator.college)
+
+Docstring vs Comment 
+=========================
+
+Comments will never be executed 
+Comments will be denoted by # Symbol
+
+Docstring will be executed in a Program
+Docstring will be denoted by triple quotation
+
+Packages(Folder)
+=================
+--> Collection of Modules is nothing but a Package.
+--> Advanates of Package is Code Reusability.
+
+Types of Packages in Python 
+============================
+
+1.Predefined Packages
+=======================
+
+--> The Packages which are already implemented by Python are known as Predefined 
+    Packages.So As a Programmer we need not to implement the modules 
+    which are present in that particular package we can directly import and 
+    use those packages.
+
+Examples 
+========
+
+Numpy
+Pandas 
+Matplotlib
+ScikitLearn
+Seaborn
+Bs4
+Requests
+
+2.User Defined Packages
+========================
+
+--> The packages which are implemented by the Programmer as per the business requirement 
+    then such type of packages are known as User Defined Packages.
+
+How we can Access Modules from a particular Package:
+======================================================
+
+Syntax:
+
+    import package_name.module_name --> Only that particular module will be imported
+
+
+    Syntax:
+
+    package_name.module_name.function_name()
+
+
+# Example of Packages-1
+# ======================
+
+import python.sub 
+import python.add
+#print(help(python.sub))
+print(python.sub.subtraction(10,20))
+print(python.add.addition(10,20))
+
+
+
+# Example of Packages-2
+# ======================
+
+import packagedemo.armstrong
+#print(help(packagedemo.armstrong))
+num = int(input("Enter a number :"))
+n = packagedemo.armstrong.armstrong(num)
+if n:
+    print("Number is Armstrong Number")
+else:
+    print("Number is not Armstrong")
+
+
+
+# Example of Packages-3
+# ======================
+
+import packagedemo.strong
+#print(help(packagedemo.strong))
+num = int(input("Enter a number :"))
+n = packagedemo.strong.strong(num)
+if n:
+    print("Number is strong Number")
+else:
+    print("Number is not strong")
+
+
+Another way to Import any Module or Package (By Using from keyword)
+====================================================================
+
+Syntax:
+=======
+
+        from module_name import function_name1,Function_name2 --> Only that specific function will be imported.
+
+        from module_name import * --> All the Variables/Function/Classes are present in tha particular module will be available to our current module.
+
+
+Advantage:
+==========
+
+--> By Using Above Approch we need not to write module name again and again we 
+    directly call functions/variables/classes from another module to our current module.
+
+
+Example of Modules/Packages with From Keyword -1 
+====================================================
+
+from math import factorial,sqrt  #Only Two Functions from math module will be imported.
+
+print(factorial(10))
+print(sqrt(144))
+#print(floor(6.5)) #Error
+
+
+Example of Modules/Packages with From Keyword -2
+====================================================
+
+from math import *  #Whatever variables/classes/functions are available in that module will be imported in your current file.
+
+print(factorial(10))
+print(sqrt(144))
+print(floor(6.5))
+print(pi)
+print(e)
+
+
+Example of Modules/Packages with From Keyword -3
+====================================================
+
+from calculator import *  #Whatever variables/classes/functions are available in that module will be imported in your current file.
+
+print(add(10,20))
+print(sub(10,20))
+print(mul(10,20))
+print(div(10,20))
+
+
+Example of Modules/Packages with From Keyword -4
+====================================================
+
+from calculator import add,sub,mul  
+
+print(add(10,20))
+print(sub(10,20))
+print(mul(10,20))
+print(div(10,20))
+
+
+Syntax:
+
+from package_name.module_name import * --> Whatever functions are present in your module are available to the current file. 
+
+from package_name.module_name import function1,funtion2 --> only two functions will be imported.
+
+
+
+# Example of Modules/Packages with From Keyword -5
+# ====================================================
+
+from packagedemo.strong import *
+from packagedemo.armstrong import *
+from python.add import *
+print(strong(145))
+print(armstrong(153))
+print(addition(10,29))
+
+Module Aliasing 
+=================
+
+--> We can also give our own alias name for a module.
+Syntax:
+
+     import module as alias_name 
+
+
+Example of Module.
+=====================
+
+import random as r 
+import math as m
+import calculator as nik
+
+print("Random Number Generated",r.randint(10,20))
+print(r.uniform(1,100))
+print("Factorail Value is :",m.factorial(10))
+print("Addition is :",nik.add(10,20))
+
+
+
+
+
+
+
+
