@@ -1,0 +1,759 @@
+Regular Expression 
+===================
+
+--> If we want to represent a group of string according to a particular pattern then 
+    we will use Regular Expression.
+
+Example of Regular Expression 
+==============================
+
+Example of RE --> Fixed Pattern is there for our Mobile Number
+                  (6-9,10 Numbers,Starting digits cannot be 0).
+
+Example of RE --> Fixed Pattern For PAN Card.
+
+Example of RE --> Fixed Pattern is For Vechile Number 
+  
+Example of RE --> Fixed pattern is there in Email id
+
+Example of RE --> Fixed Pattern is there for any Website.
+
+Mobile Number Pattern 
+======================
+
+--> In India There is a fixed pattern for a Mobile Number 
+
+Pattern:
+
+    1.Only 10 Digits are allowed.
+    2.Each and Every Mobile Number Started with 6-9.
+    3.Starting Number cannot be 0
+
+
+Email Id Pattern:
+==================
+
+--> Email is also having its own pattern.
+
+
+Pattern:
+
+       username@domain_name.com
+
+
+domain_name --> google,yahoo,outlook etc..
+
+--> Can I say this thing that after @ we will get domain name of mail ID.
+
+
+Uses of Regular Expressions 
+============================
+
+1.Password
+
+Weak Password -->Only Alphabets are there and Total 6 characters we have used.
+
+Medium Password --> Alphabets and Numbers  are there and total characters are 8.
+
+Strong Password --> Special Characters , Alphabets and Numbers and Total characters are 8.
+
+2.Validation of Data
+
+Mobile Number --> abcdef --> Only Digits are allowed.
+
+Email ID  ---> praty@domain.com
+
+3.Email 
+
+
+4.Translator --> TOC --> Compiler Design 
+
+5.Digital Circuit 
+
+6.Protocols like TCP/IP --> Computer Network
+
+
+How we can Implement Regular Expression in Python 
+===================================================
+
+--> In Python Programming if we want to implement any type of Pattern or Regular 
+    expression then for that we need to use one module whose name is re module.
+
+--> re is a module which we need to import before creating any regular expression.
+
+Few Important Functions related to Regular Expression
+=======================================================
+
+1.finditer()
+2.start()
+3.end()
+4.group()
+
+
+finditer() Function 
+====================
+
+--> This Function will take two arguments as an input in which first argument is the 
+    pattern and second argument is the string in which that particular pattern is present.
+
+--> This Function will check weather that particular pattern is present in the 
+    given string or not.if the pattern is present in the given string then it will return 
+    an object that is having matched string else it will return nothing.
+
+--> For using finditer we need to use either any loop or any sequence datatype.
+
+
+start() Function 
+================
+
+--> This Function is used to return the start indexed of the matched string.
+
+
+end() Function 
+==============
+
+--> This Function is used to return end+1 index of the matched string.
+
+group() Function
+================
+
+--> This Function will return matched string.
+
+Example of Regular Expression 
+==============================
+
+import re 
+matcher = re.finditer('abc','abcabcabcabc')
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+import re 
+matcher = re.finditer('ab','123@abaer@hdifu')
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+Character Classes in Regular Expression:
+=========================================
+
+1. [abc] --> either a,b,c
+2. [^abc] --> except a,b,c
+3. [a-z] --> any lower case Alphabets characters(a-z)
+4. [A-Z] --> Any Upper Case alphabet characters
+5. [a-zA-z] --> Any alphabet either in upper case of in lower case.
+6. [0-9] --> Any Digit 0 to 9
+7. [a-zA-Z0-9] --> Any uppercase alphabet/Lower case alphabet and Digits.
+8. [^a-zA-Z0-9] --> Except uppercase alphabet/Lower case alphabet and Digits --> Special Character.
+
+
+Example of Character Classes 
+==============================
+
+1.[abc] --> either a,b,c 
+=========================
+
+import re 
+matcher = re.finditer("[abc]","a7b@9xbs")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+2. [^abc] --> except a,b,c
+=============================
+
+import re 
+matcher = re.finditer("[^abc]","a7b@9xbs")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+3. [a-z] --> any lower case Alphabets characters
+======================================================
+
+
+import re 
+matcher = re.finditer("[a-z]","aABBCCDDx")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+4. [A-Z] --> any upper case Alphabets characters
+======================================================
+
+import re 
+matcher = re.finditer("[A-Z]","ABCxabhsZ")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+5. [a-zA-z] --> Any alphabet either in upper case of in lower case.
+=====================================================================
+
+import re 
+matcher = re.finditer("[a-zA-Z]","123a@$#A*B^s")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+
+6.[0-9] --> Any Digit 0 to 9
+==============================
+
+import re 
+matcher = re.finditer("[0-9]","123a@$#A*B^s")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+7. [a-zA-Z0-9] --> Any uppercase alphabet/Lower case alphabet and Digits.
+============================================================================
+
+import re 
+matcher = re.finditer("[a-zA-Z0-9]","123a@$#A*B^s")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+
+8. [^a-zA-Z0-9] --> Except uppercase alphabet/Lower case alphabet and Digits --> Special Character.
+===================================================================================================
+
+import re 
+matcher = re.finditer("[^a-zA-Z0-9]","123a@$#A*B^s")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+Important Note 
+===============
+
+--> We can customize Character classes based on our Requirement.
+
+
+# Example of Customization Of Character Classes:
+# ==================================================
+
+
+import re 
+matcher = re.finditer("[a-d]","123a@bxe$#A*B^s") #Only a to d
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+import re 
+matcher = re.finditer("[xyz]","123a@bxe$#A*B^s") #Either x,y,z
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+import re 
+matcher = re.finditer("[^xyz]","123a@bxe$#A*B^s") #except x,y,z
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+import re 
+matcher = re.finditer("[A-D]","123a@bxe$#A*B^s") #Only Upper Alphabets between A-D
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+import re 
+matcher = re.finditer("[0-2]","123a@bxe$#A*B^s") #Only digits between 0-2
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+
+import re 
+matcher = re.finditer("[a-kA-C]","123a@bxe$#A*B^s") #lower case between a-k and upper case A-C
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+
+import re 
+matcher = re.finditer("[^a-kA-C0-2]","123a@bxe$#A*B^s") #except (lower case between a-k and upper case A-C digits between 0-2)
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+Important Function Related to Regular Expression 
+==================================================
+
+re.match() Function 
+====================
+
+--> This Function will check weather a Given String is Begin with the given pattern or not. 
+--> If the string is started with a particular pattern then this re.match function will return some objects.
+    else this re.match() function will return None.
+
+Syntax:
+    
+            re.match(pattern,string)
+
+
+Example of re.match() Function 
+================================
+
+import re 
+m = re.match('ab','abcabcxyz')
+if m!=None:
+    print('Match Found')
+else:
+    print('Match not Found')
+
+import re 
+m = re.match('ab','xyzabcxyz')
+print(m)
+if m!=None:
+    print('Match Found')
+else:
+    print('Match not Found')
+
+
+re.fullmatch() Function 
+========================
+
+--> This Function is used to check weeather a given string is same as the patter which 
+    is given. 
+
+--> This will check complete string if the complete and pattern both are same then it 
+    will return some object else it will return None.
+
+
+Example of re.fullmatch() Function 
+==================================
+
+import re 
+m = re.fullmatch('abc','abcabcxyz')
+if m!=None:
+    print('Match Found')
+else:
+    print('Match not Found')
+
+import re 
+m = re.fullmatch('abcabcxyz','abcabcxyz')
+if m!=None:
+    print('Match Found')
+else:
+    print('Match not Found')
+
+
+re.search() Function 
+=====================
+
+--> This function will search the given pattern in complete string.
+--> if the pattern is present anywhere in the given string then it will return some object
+    else it will return None.
+
+
+Example of re.search() Function 
+================================
+
+import re 
+m = re.search('xy','abcabcxyz')
+if m!=None:
+    print('Match Found')
+else:
+    print('Match not Found')
+
+import re 
+m = re.search('xya','abcabcxyz')
+if m!=None:
+    print('Match Found')
+else:
+    print('Match not Found')
+
+
+re.findall() Function
+======================
+
+--> This Function is used to return all the occurances of a Particular Pattern.
+
+--> This Function will always return result in the form of list.
+
+Example of re.findall() Function 
+================================
+
+import re 
+m = re.findall('[a-z0-9]','a786AbcAZa@#')
+print(m)#['a','7','8','6','b','c','a']
+
+
+import re 
+m = re.findall('[0-9]','a786AbcAZa@#')
+print(m)#['a','7','8','6','b','c','a']
+
+
+re.sub() Function 
+==================
+
+--> sub means substitution or replacement
+
+--> The re.sub() Function searches for the pattern in the string and replaces the 
+    matched strings with the replacement string/Character 
+
+Syntax:
+
+        re.sub(Character_Class , symbol , string)
+
+Example of re.sub() Function 
+==============================
+
+import re
+s = re.sub('[a-z]',"%","aA$$**bxAOP@@")
+print(s)
+
+s = re.sub('[0-9]',"&&@@","1ABCDEF991")
+print(s)
+
+
+re.subn() Function 
+==================
+
+--> sub means substitution or replacement
+
+--> The re.subn() Function searches for the pattern in the string and replaces the 
+    matched strings with the replacement string/Character along with that 
+    it will also return count of the replacement string/Character.
+
+Syntax:
+
+        re.subn(Character_Class , symbol , string)
+
+Example of re.subn() Function 
+==============================
+
+import re
+s = re.subn('[a-z]',"%","aA$$**bxAOP@@")
+print(s)
+
+s = re.subn('[0-9]',"&&@@","1ABCDEF991")
+print(s)
+
+s = re.subn('[a-kA-C0-5]','ta','A99# aM**L')
+print(s)
+
+^ Symbol 
+=========
+
+--> This ^ Symbol checks weather the given target string starts with the given  
+    pattern or not.if it is started with the given pattern then ^ symbol will return 
+    some object else this symbol will return None.
+
+Example of ^ Symbol 
+====================
+
+import re 
+
+res = re.search("^Easy","Learning Python is Easy")
+if res!=None:
+    print("Target string started with the given pattern")
+else:
+    print("Target string not started with the given pattern")
+
+
+import re 
+
+res = re.search("^Learning","Learning Python is Easy")
+if res!=None:
+    print("Target string started with the given pattern")
+else:
+    print("Target string not started with the given pattern")
+
+
+
+$ Symbol 
+=========
+
+--> This $ Symbol checks weather the given target string ends with the given  
+    pattern or not.if it is ended with the given pattern then $ symbol will return 
+    some object else this symbol will return None.
+
+Example of $ Symbol 
+====================
+
+import re 
+
+res = re.search("Easy$","Learning Python is Easy")
+if res!=None:
+    print("Target string ended with the given pattern")
+else:
+    print("Target string not ended with the given pattern")
+
+
+import re 
+
+res = re.search("Learning$","Learning Python is Easy")
+if res!=None:
+    print("Target string ended with the given pattern")
+else:
+    print("Target string not ended with the given pattern")
+
+
+Predefined Character Classes 
+=============================
+
+--> We cannot customized Predefined Character Classes.
+
+1. \s  --> Space Character
+2. \S  --> Any Character except space characters
+3. \d  --> Any digits from 0 to 9
+4. \D  --> Except Digits from 0 to 9
+5. \w  --> Any word Character[a-zA-Z0-9]
+6. \W  --> Except Any word Character[a-zA-Z0-9]
+7. '.' --> Any Character including all space character.
+
+Note 
+====
+
+--> . dot predefined character classes will consider each and every symbol except \n.
+
+Example of Predefined Character Classes 
+=========================================
+
+1. \s  --> Space Character
+===========================
+
+
+import re 
+matcher = re.finditer("\s","aAB BC CDD x")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+2. \S  --> Any Character except space characters
+==================================================
+
+
+import re 
+matcher = re.finditer("\S","a C C x")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+
+3. \d  --> Any digits from 0 to 9
+====================================
+
+import re 
+matcher = re.finditer("\d","a9C5C8x")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+
+4. \D  --> Except Any digits from 0 to 9
+============================================
+
+import re 
+matcher = re.finditer("\D","a9C5C8x")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+
+5. \w  --> Any word Character[a-zA-Z0-9]
+===========================================
+
+import re 
+matcher = re.finditer("\w","a@@&&9C5%%C8@@x")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+6. \W  --> Except Any word Character[a-zA-Z0-9]
+===========================================
+
+import re 
+matcher = re.finditer("\W","a@@&&9C5%%C8@@x")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+7. '.' --> Any Character including all space character.
+=========================================================
+
+
+import re 
+matcher = re.finditer(".","a@@&&9C5%%C8@@x")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+Quantifiers 
+===========
+
+--> Quantifiers are used to specify the number of occurances to a match.
+--> We can customize all the Quantifiers based on our Requirement.
+
+1. a --> exactly one a 
+2. a+ -->  atleast one a 
+3. a* --> any number of a  including 0
+4. a? --> atmost one a 
+5. a{m} --> exactly m number of a 
+6. a{m,n} --> minimum m number of a and maximum n number of a.
+
+Example of Quantifiers 
+======================
+
+1. a --> exactly one a 
+========================
+
+import re 
+matcher = re.finditer("a","abbaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+
+2. a+ -->  atleast one a 
+===========================
+import re 
+matcher = re.finditer("a+","abbaaaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+import re 
+matcher = re.finditer("a+","abbaaxaabaaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+
+import re 
+matcher = re.finditer("x+","abbaaxaabxxa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+import re 
+matcher = re.finditer("x+","abcxxabxxxxxxxxxlix")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+import re 
+matcher = re.finditer("b+","DDBBbbb@b@@bbbb")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+3. a* --> any number of a  including 0
+========================================
+
+import re 
+matcher = re.finditer("a*","abbaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+
+
+import re 
+matcher = re.finditer("b*","abbabab")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
+                   0              0              ""
+                   1              3              bb
+                   3              3               ""
+                   4              5               b 
+                   5              5              "" 
+                   6              7               b
+                   7              7              ""
+
+Mobile Number Validation 
+=========================
+
+Starting Number --> 6 to 9 --> [6-9] --> Either 6,7,8,9
+Next 9 Digit --> 0 to 9 --> [0-9] --> Any digit between 0 to 9
+
+[0-9]{9}
+
+a{5} --> 5 times a 
+
+[0-9]{9} --> 9 times any digit between 0 to 9
+
+import re 
+
+mobile_no = int(input('Enter a Number : '))
+mobile_no = str(mobile_no)
+m=re.fullmatch('[6-9][0-9]{9}',mobile_no)
+if m!=None:
+    print("Mobile Number is Valid")
+else:
+    print("Mobile Number is not Valid")
+
+
+
+
+import re 
+matcher = re.finditer("b*","abbaab")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group())
+                # 0                   0             ""
+                # 1                   3             bb
+                # 3                   3             ""
+                # 4                   4             ""
+                # 5                   6             b 
+                # 6                   6             ""
+    
+4. a? --> atmost one a (Either 0 times a or one time a)
+==========================================================
+
+import re 
+matcher = re.finditer("a?","abbaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
+            0                      1               a 
+            1                      1               ""
+            2                      2               ""
+            3                      4               a 
+            4                      5               a
+
+
+         
+5. a{m} --> exactly m number of a 
+==================================
+
+import re 
+matcher = re.finditer("a{5}","abbaaaaaaaaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
+
+import re 
+matcher = re.finditer("a{5}","abbaaaaaaaaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
+
+
+import re 
+matcher = re.finditer("a{3}","abbaaaaaaaaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
+
+import re 
+matcher = re.finditer("a{2}","abbaaaaaaaaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
+
+6. a{m,n} --> minimum m number of a and maximum n number of a.
+================================================================
+
+import re 
+matcher = re.finditer("a{2,5}","abbaaaaaaaaaxxaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
+
+
+import re 
+matcher = re.finditer("a{2,5}","abbaaaaaaaaaxxaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
+
+
+import re 
+matcher = re.finditer("a{3,8}","abbaaaaaaaaaxxaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
+
+import re 
+matcher = re.finditer("a{3,8}","abbaabaaaaxxaa")
+for i in matcher:
+    print(str(i.start())+"  "+str(i.end())+" "+i.group()) 
