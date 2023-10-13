@@ -1,0 +1,418 @@
+Types of Functions 
+===================
+
+1.Predefined Function
+=======================
+
+--> The Functions which are already declared and defined by Python Virtual Machine.Such 
+    type of functions are known as Predefined Function.
+
+--> We can directly use these function we as a programmer no need to declare or defined 
+    such functions.
+
+Examples:
+=========
+
+1.id()
+2.type()
+3.sum()
+4.max()
+5.min() etc..
+
+2.User Defined Function
+========================
+
+--> The Functions which are developed by the programmer as per the business requirement 
+    such types of functions are known as User Defined Functions.
+
+--> We as a Programmer need to implement such functions.
+
+Example:
+
+def add(x,y):
+    return x+y
+
+
+Anonymous(Lambda) Function 
+===========================
+
+--> An Anonymous Function is a Function that is defined  without any name.
+
+--> While normal Functions are defined by using def keyword in Python whereas 
+    Anonymous Function are defined using Lambda Keyword.Hence Anonymous Functions are 
+    also known as Lambda Function.
+
+--> The main purpose of Anonymous Function is Just to instant use(One time usage).
+
+--> In Anonymous Function is Nothing but Lambda Function.
+
+
+Lambda Function 
+================
+
+--> Lambda Function is an Anonymous Function which doesnot have any name.
+
+--> If we want to create any function as Anonymous Function then we need to use Lambda 
+    keyword.
+
+Syntax of Lambda Function 
+=========================
+
+           variable_name =  lambda parameter : expression
+
+Example of Lambda Function 
+===========================
+
+Python Program to  Find the Square of a Number 
+=================================================
+
+By Using User Defined Function 
+================================
+
+def square(n):
+    return n**2
+
+print(square(5)) #25
+
+
+By Using Lambda Function 
+===========================
+
+variable_name =  lambda parameter : expression
+
+squared = lambda n : n**2
+
+print(squared(5))
+
+
+Python Program to Add Two Number
+=================================
+
+By Using User Defined Function 
+===============================
+
+def add(x,y):
+    return x+y 
+
+print(add(10,20))
+
+By Using Lambda Function 
+=========================
+
+variable_name =  lambda parameter : expression
+
+sums = lambda x,y : x+y
+print(sums(100,200))
+
+Python Program to Find the Maximum of Two Numbers 
+==================================================
+
+By Using User Defined Function 
+===============================
+
+def maximum(a,b):
+    if a>b:
+        return "First Number is Greater"
+    else:
+        return "Second Number is Greater"
+
+print(maximum(10,20))
+
+
+By Using Lambda Function 
+==========================
+
+
+variable_name =  lambda parameter : expression
+
+maxi = lambda a,b : "First Number is Greater" if a>b  else "Second Number is Greater"
+print(maxi(10,20))
+
+
+
+Python Program to Find Weather a Given Number is Odd or Even. 
+==============================================================
+
+By Using Lambda Function 
+=========================
+
+variable_name =  lambda parameter : expression
+
+odd_even = lambda n : "n is even" if n%2==0 else "n is odd"
+
+print(odd_even(10))
+
+
+Python Program to Find Maximum of Three Numbers 
+=================================================
+
+By Using Lambda Function 
+==========================
+
+variable_name = lambda parameter : expression
+
+maximum_three = lambda a,b,c : "a is Greater" if a>b and a>c  else "b is greater" if b>c else "c is greater"
+print(maximum_three(10,1,2))
+
+
+Important Note: 
+=================
+
+--> With Lambda Function Directly we cannot pass any Loop.
+--> If There is any requirement for Iterations with Lambda Function then we will use 
+    High Order Function(Map Function).
+
+High Order Function 
+====================
+
+--> High Order Functions are Those Function which will take another function and a 
+    sequence as an argument in it.
+
+--> If you want to apply certain logic for each and every element of a sequence 
+    then we will go with high order Functions.
+
+Normal Function 
+================
+
+def add(a,b):  #Datatype
+    return a+b
+
+High Order Function 
+====================
+
+Arguments --> Another_Functions + Sequence
+
+
+Filter Function 
+================
+
+--> Filter is a High Order Function that means it will take another Function as an input 
+    along with a sequence.
+
+--> Filter Function will filter out all the required element based on the Given Function.
+
+--> In Case of Filter Function Inside a Function whatever condition is True 
+    it will check that condition for each and every element of the sequence and 
+    rest false conditions will be ignored in case of filter function.
+
+--> Filter Function always return an object and we cannot use that object directly so 
+    we need to typecast it in the form list.
+
+
+Example of Filter Function -1 
+==============================
+
+Without Lambda and Filter 
+===============================
+
+def odd_even(n):
+    if n%2==0:
+        return True 
+    else:
+        return False
+
+l1 = [99,23,12,78,55,79,25]
+
+num = list(filter(odd_even,l1))
+print(num)
+
+With Lambda and Filter 
+========================
+
+l1 = [99,23,12,78,55,79,25]
+
+num = list(filter(lambda n : True if n%2==0 else False,l1))
+print(num)
+
+
+Example of Filter Function -2
+==============================
+
+
+With Lambda and Filter 
+======================
+
+cart = [100,200,500,700,800,900,1000,1200,1400,2000]
+
+Filter out all the prices from the cart which is greater 1000.
+
+filter_values = list(filter(lambda n: True if n>1000 else False,cart ))
+print(filter_values)
+
+
+
+Example of Filter Function -2
+==============================
+
+
+With Lambda and Filter 
+======================
+
+#Filter out Numbers  from 1 to 500 which are divisble by 7 and 9.
+
+div = list(filter(lambda x:True if x%7==0 and x%9==0 else False,range(1,501)))
+print(div)
+
+
+Map Function 
+=============
+
+--> Map in Python works as an  Iterator to return a result after applying a function 
+    to every item of a sequence.
+
+--> If we want to apply a specific Functionality to each and every element of the 
+    sequence then we should go for Map Function.
+
+--> If we are using Filter Function --> Either length will lesser then original list or Equal to Original List.
+
+--> If we are using Map Function -->  Same Length will be there in original list and also after using map Function.
+
+--> Map is also a High Order Function that means it will take two arguments as  an input 
+    first is your another function and second is your sequence.
+
+Example of Map Function 
+========================
+
+Without Lambda  and Map 
+=========================
+
+l1 = [2,4,5,6,7,19,10]
+
+#Square of Each and Every Element of the list. 
+
+def double(l1):
+    l2 = []
+    for i in l1:
+       l2.append(i**2)
+    return l2
+
+
+With Lambda But No Map  
+=======================
+
+l1 = [2,4,5,6,7,19,10]
+
+def double_n(l1):
+    l2 = []
+    for x in l1:
+        temp = lambda x:x**2 
+        l2.append(temp(x))
+    return l2
+
+
+Without Lambda and Map Function 
+================================
+
+def double(n):
+    return n**2
+
+l1 = [2,4,5,6,7,19,10]
+
+l = list(map(double,l1))
+print(l)
+
+
+With Lambda and Map Function 
+==============================
+
+l = list(map(lambda n:n**2,l1))
+print(l)
+
+
+Example of Map Function -2
+===========================
+ 
+l1 = [2,4,5,6,7,19,10]
+l = list(map(lambda x:True if x%2==0 else False,l1))
+print(l)
+
+
+How to take list as an Input 
+=============================
+
+1.By Using For Loop 
+2.By using Eval Function 
+3.By Using List Comphersion 
+4.By Using Map Function
+
+
+By Using Map Function(List Input) 
+=====================================
+
+a = list(map(int,input().split()))
+print(a)
+print(type(a))
+
+
+Reduce Function 
+================
+
+--> This Function will reduce all elements of the list into a single element/Value.
+--> Reduce function is present in functool module.
+--> A single answer will be returned with the help of reduce Function .
+--> If we want to reduce a complete sequence into a single value then we will go  with 
+    reduce function.
+
+Example of Reduce Function 
+============================
+from functools import reduce
+l = [10,20,30,40,50] 
+result = reduce(lambda x,y:x+y,l)
+print(result)
+
+from functools import reduce
+l = [10,20,30,40,50] 
+result = reduce(lambda x,y:x*y,l)
+print(result)
+
+Function Aliasing 
+==================
+
+--> Function Aliasing means Another name for any Function. 
+--> In Python Function Aliasing is Possible.
+
+Example of Function Aliasing 
+=============================
+
+def wish(name):
+    print("Good Evening ",name)
+    return ""
+
+greeting = wish
+wish("Ansh")
+greeting("Aryan")
+
+del wish
+greeting('Pratyush')
+
+Important Note:
+================
+
+If we are deleting any one reference of a function then we can still access that 
+function with another name.Only that particular reference will be deleted.
+
+
+String Formatting 
+===================
+
+--> If we want to pass a dynamic value with the string the we will use string 
+    formatting concept.
+
+# Example of String Formatting 
+# ===============================
+i=1
+print("This is my i")
+print(f"This is my {i}")
+
+# Example of String Formatting 
+# ===============================
+
+
+l  = [10,20,30,40,50,60]
+for i in range(len(l)):
+    print(f"{l[i]} is Present at index {i}")
+
+
+
+
+
